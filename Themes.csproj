@@ -1,0 +1,1495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB70A642-8CEC-4DDE-8C9F-AD08900EC98D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Themes</RootNamespace>
+    <AssemblyName>Themes</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\OrchardBasicCorrectness.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\aspnetmvc\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cascade.Admin\OverrideTheAdmin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cascade.Admin\Cascade.Admin.csproj" />
+    <Content Include="Cascade.Admin\Content\Web.config" />
+    <Content Include="Cascade.Admin\Placement.info" />
+    <Content Include="Cascade.Admin\Scripts\Web.config" />
+    <Content Include="Cascade.Admin\Styles\Web.config" />
+    <Content Include="Cascade.Admin\Theme.png" />
+    <Content Include="Cascade.Admin\Theme.txt" />
+    <Content Include="Cascade.Admin\Views\Dashboard\Admin\Index.cshtml" />
+    <Content Include="Cascade.Admin\Views\EditorTemplates\Parts.Comment.cshtml" />
+    <Content Include="Cascade.Admin\Views\EditorTemplates\Parts\BootstrapThemeSettings.cshtml" />
+    <Content Include="Cascade.Admin\Web.config" />
+    <Content Include="Cascade.SimpleBootstrap\Images\favicon.ico" />
+    <Content Include="Cascade.SimpleBootstrap\Cascade.SimpleBootstrap.csproj" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\general.css" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\site.css" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\site.min.css" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\variables.css" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\variables.min.css" />
+    <Content Include="Cascade.SimpleBootstrap\Theme.png" />
+    <Content Include="Cascade.SimpleBootstrap\Theme.txt" />
+    <Content Include="Cascade.SimpleBootstrap\ThemeZonePreview.png" />
+    <Content Include="cbca_national\Content\CBCA_full-logo_blue_tagline.png" />
+    <Content Include="cbca_national\Scripts\custom.js" />
+    <Content Include="cbca_national\theme.png" />
+    <Content Include="cbca_national\theme.txt" />
+    <Content Include="Clayton\Content\ClaytonTremlettLogo.png" />
+    <Content Include="Clayton\Theme.png" />
+    <Content Include="Clayton\Theme.txt" />
+    <Content Include="Encompass\Theme.png" />
+    <Content Include="Encompass\Theme.txt" />
+    <Content Include="hiphouse\Theme.png" />
+    <Content Include="hiphouse\Theme.txt" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hgignore" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\00changelog.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\bookmarks" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\branch" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\cache\branchheads-served" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\cache\tags" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\dirstate" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\hgrc" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\requires" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\sourcetreeconfig" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\00changelog.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\00manifest.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_compiler\less-1.3.0.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_compiler\lessc.wsf.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\about.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\css\docs.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\css\pygments-manni.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\ico\apple-touch-icon-114-precomposed.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\ico\apple-touch-icon-144-precomposed.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\ico\apple-touch-icon-57-precomposed.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\ico\apple-touch-icon-72-precomposed.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\ico\favicon.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\application.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\customizer.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\filesaver.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\holder.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\html5shiv.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\jquery.bbq.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\jquery.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\jszip.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\less.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\raw-files.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\respond.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\assets\js\uglify.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\bower.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\browserstack.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\component.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\components.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\composer.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\css.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\customize.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\css\bootstrap-theme.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\css\bootstrap-theme.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\css\bootstrap-theme.min.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\css\bootstrap.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\css\bootstrap.css.map.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\css\bootstrap.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\css\bootstrap.min.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\fonts\glyphicons-halflings-regular.eot.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\fonts\glyphicons-halflings-regular.svg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\fonts\glyphicons-halflings-regular.ttf.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\fonts\glyphicons-halflings-regular.woff.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\fonts\glyphicons-halflings-regular.woff2.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\js\bootstrap.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\js\bootstrap.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\dist\js\npm.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\css\docs.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\css\pygments-manni.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\ico\apple-touch-icon-144-precomposed.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\ico\favicon.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\js\application.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\js\customizer.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\js\filesaver.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\js\holder.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\js\ie8-responsive-file-warning.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\js\jszip.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\js\less.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\js\raw-files.js.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\js\raw-files.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs-assets\js\uglify.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\about.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\apple-touch-icon-precomposed.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\apple-touch-icon.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\brand\bootstrap-outline.svg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\brand\bootstrap-punchout.svg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\brand\bootstrap-solid.svg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\css\bootstrap.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\css\docs.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\css\docs.min.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\css\pygments-manni.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\css\src\anchor.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\css\src\docs.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\css\src\pygments-manni.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\css\__src\docs.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\css\__src\pygments-manni.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\flash\_zero_clipboard.swf.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\fonts\glyphiconshalflings-regular.eot.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\fonts\glyphiconshalflings-regular.otf.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\fonts\glyphiconshalflings-regular.svg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\fonts\glyphiconshalflings-regular.ttf.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\fonts\glyphiconshalflings-regular.woff.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\ico\apple-touch-icon-114-precomposed.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\ico\apple-touch-icon-144-precomposed.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\ico\apple-touch-icon-57-precomposed.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\ico\apple-touch-icon-72-precomposed.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\ico\favicon.ico.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\ico\favicon.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\components.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\devices.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-carousel.png.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-carousel.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-grid.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-jumbotron-narrow.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-justified-nav.png.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-justified-nav.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-marketing.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-navbar-fixed-top.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-navbar-static-top.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-navbar.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-signin.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-starter.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-sticky-footer-navbar.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\examples\bootstrap-example-sticky-footer.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\img\sass-less.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\application.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-affix.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-alert.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-button.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-carousel.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-collapse.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-dropdown.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-modal.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-popover.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-scrollspy.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-tab.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-tooltip.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-transition.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap-typeahead.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\bootstrap.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\customize.min.js.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\customize.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\customizer.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\docs.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\holder\holder.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\html5shiv.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\ie-emulation-modes-warning.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\ie10-viewport-bug-workaround.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\ie8-responsive-file-warning.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\jquery.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\raw-files.min.js.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\raw-files.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\respond\respond.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\src\application.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\src\customizer.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\anchor.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\autoprefixer.js.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\autoprefixer.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\blob.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\filesaver.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\holder.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\jszip.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\jszip.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\less.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\uglify.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\_blob.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\_file_saver.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\vendor\_zero_clipboard.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\_r_e_a_d_m_e.md.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\__src\application.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\__src\customizer.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\__vendor\blob.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\__vendor\filesaver.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\__vendor\holder.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\__vendor\jszip.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\__vendor\less.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\__vendor\uglify.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\assets\js\__vendor\_zero_clipboard.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\browser-bugs.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\components.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\css.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\customize.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\customizer-nav.jade.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\customizer-variables.jade.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\css\bootstrap-theme.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\css\bootstrap-theme.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\css\bootstrap-theme.min.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\css\bootstrap.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\css\bootstrap.css.map.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\css\bootstrap.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\css\bootstrap.min.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\fonts\glyphicons-halflings-regular.eot.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\fonts\glyphicons-halflings-regular.svg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\fonts\glyphicons-halflings-regular.ttf.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\fonts\glyphicons-halflings-regular.woff.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\fonts\glyphicons-halflings-regular.woff2.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\js\bootstrap.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\js\bootstrap.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\dist\js\npm.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\docs.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\blog\blog.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\blog\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\carousel.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\carousel\carousel.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\carousel\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\cover\cover.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\cover\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\dashboard\dashboard.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\dashboard\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\grid.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\grid\grid.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\grid\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\jumbotron-narrow.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\jumbotron-narrow\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\jumbotron-narrow\jumbotron-narrow.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\jumbotron.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\jumbotron\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\jumbotron\jumbotron.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\justified-nav.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\justified-nav\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\justified-nav\justified-nav.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\navbar-fixed-top.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\navbar-fixed-top\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\navbar-fixed-top\navbar-fixed-top.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\navbar-static-top.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\navbar-static-top\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\navbar-static-top\navbar-static-top.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\navbar.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\navbar\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\navbar\navbar.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\non-responsive\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\non-responsive\non-responsive.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\offcanvas\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\offcanvas\offcanvas.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\offcanvas\offcanvas.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\blog.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\carousel.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\cover.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\dashboard.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\equal-height-columns.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\grid.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\jumbotron-narrow.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\jumbotron.jpg.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\jumbotron.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\justified-nav.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\navbar-fixed.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\navbar-static.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\navbar.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\non-responsive.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\offcanvas.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\sign-in.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\starter-template.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\sticky-footer-navbar.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\sticky-footer.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\screenshots\theme.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\signin.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\signin\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\signin\signin.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\starter-template.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\starter-template\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\starter-template\starter-template.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\sticky-footer-navbar.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\sticky-footer-navbar\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\sticky-footer-navbar\sticky-footer-navbar.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\sticky-footer.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\sticky-footer\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\sticky-footer\sticky-footer.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\theme\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\theme\theme.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\tooltip-viewport\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\tooltip-viewport\tooltip-viewport.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\examples\tooltip-viewport\tooltip-viewport.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\favicon.ico.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\getting-started.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\grunt\bs-glyphicons-data-generator.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\grunt\bs-lessdoc-parser.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\grunt\bs-raw-files-generator.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\javascript.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\migration.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\robots.txt.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\sitemap.xml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\_l_i_c_e_n_s_e.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__data\browser-bugs.yml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__data\core-team.yml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__data\glyphicons.yml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__data\sass-team.yml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__data\showcase.yml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__data\translations.yml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\ads.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\colophon.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\alerts.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\badges.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\breadcrumbs.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\button-dropdowns.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\button-groups.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\dropdowns.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\glyphicons.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\input-groups.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\jumbotron.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\labels.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\list-group.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\media.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\navbar.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\navs.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\page-header.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\pagination.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\panels.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\progress-bars.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\responsive-embed.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\thumbnails.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\components\wells.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\buttons.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\code.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\forms.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\grid.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\helpers.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\images.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\less.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\overview.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\responsive-utilities.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\sass.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\tables.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\css\type.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\customizer-variables.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\docs-nav.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\footer.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\accessibility.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\browser-device-support.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\community.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\disabling-responsiveness.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\download.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\examples.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\grunt.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\license.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\template.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\third-party-support.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\tools.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\translations.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\getting-started\whats-included.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\header.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\affix.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\alerts.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\buttons.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\carousel.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\collapse.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\dropdowns.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\modal.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\overview.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\popovers.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\scrollspy.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\tabs.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\tooltips.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\js\transitions.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav-about.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav-components.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav-css.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav-customize.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav-getting-started.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav-javascript.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav-main.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav-migration.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\navbar.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav\about.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav\components.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav\css.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav\customize.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav\getting-started.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav\javascript.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav\main.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\nav\migration.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__includes\social-buttons.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__jade\customizer-nav.jade.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__jade\customizer-variables.jade.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__layouts\customize.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__layouts\default.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__layouts\example.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__layouts\home.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__plugins\bridge.rb.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\docs\__plugins\bugify.rb.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\carousel\carousel.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\carousel\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\grid\grid.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\grid\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\jumbotron-narrow\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\jumbotron-narrow\jumbotron-narrow.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\jumbotron\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\jumbotron\jumbotron.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\justified-nav\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\justified-nav\justified-nav.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\navbar-fixed-top\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\navbar-fixed-top\navbar-fixed-top.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\navbar-static-top\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\navbar-static-top\navbar-static-top.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\navbar\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\navbar\navbar.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\non-responsive\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\non-responsive\non-responsive.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\offcanvas\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\offcanvas\offcanvas.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\offcanvas\offcanvas.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\carousel.jpg.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\carousel.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\grid.jpg.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\grid.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\jumbotron-narrow.jpg.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\jumbotron-narrow.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\jumbotron.jpg.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\jumbotron.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\justified-nav.jpg.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\justified-nav.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\navbar-fixed.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\navbar-static.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\navbar.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\non-responsive.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\offcanvas.jpg.d" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\offcanvas.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\sign-in.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\starter-template.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\sticky-footer-navbar.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\sticky-footer.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\screenshots\theme.jpg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\signin\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\signin\signin.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\starter-template\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\starter-template\starter-template.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\sticky-footer-navbar\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\sticky-footer-navbar\sticky-footer-navbar.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\sticky-footer\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\sticky-footer\sticky-footer.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\theme\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\examples\theme\theme.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\fonts\glyphicons-halflings-regular.eot.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\fonts\glyphicons-halflings-regular.svg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\fonts\glyphicons-halflings-regular.ttf.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\fonts\glyphicons-halflings-regular.woff.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\fonts\glyphicons-halflings-regular.woff2.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\fonts\glyphiconshalflings-regular.eot.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\fonts\glyphiconshalflings-regular.otf.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\fonts\glyphiconshalflings-regular.svg.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\fonts\glyphiconshalflings-regular.ttf.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\fonts\glyphiconshalflings-regular.woff.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\getting-started.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\grunt\bs-commonjs-generator.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\grunt\bs-glyphicons-data-generator.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\grunt\bs-lessdoc-parser.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\grunt\bs-raw-files-generator.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\grunt\config_bridge.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\grunt\sauce__browsers.yml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\grunt\~2ejshintrc.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\javascript.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\affix.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\alert.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-affix.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-alert.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-button.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-carousel.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-collapse.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-dropdown.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-modal.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-popover.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-scrollspy.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-tab.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-tooltip.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-transition.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\bootstrap-typeahead.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\button.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\carousel.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\collapse.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\dropdown.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\modal.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\popover.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\scrollspy.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tab.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\index.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\phantom.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\server.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\affix.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\alert.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-affix.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-alert.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-button.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-carousel.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-collapse.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-dropdown.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-modal.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-phantom.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-popover.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-scrollspy.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-tab.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-tooltip.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-transition.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\bootstrap-typeahead.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\button.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\carousel.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\collapse.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\dropdown.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\modal.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\phantom.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\popover.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\scrollspy.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\tab.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\tooltip.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\transition.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\unit\~2ejshintrc.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\vendor\jquery.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\vendor\jquery.min.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\vendor\qunit.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\vendor\qunit.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\affix.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\alert.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\button.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\carousel.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\collapse.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\dropdown.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\modal.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\popover.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\scrollspy.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\tab.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\visual\tooltip.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tests\_r_e_a_d_m_e.md.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\tooltip.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\transition.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\~2ejscs.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\~2ejscsrc.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\js\~2ejshintrc.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\accordion.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\alerts.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\badges.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\bootstrap.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\breadcrumbs.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\button-groups.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\buttons.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\carousel.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\close.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\code.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\component-animations.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\dropdowns.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\forms.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\glyphicons.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\grid.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\input-groups.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\jumbotron.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\labels.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\list-group.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\media.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\alerts.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\background-variant.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\border-radius.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\buttons.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\center-block.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\clearfix.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\forms.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\gradients.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\grid-framework.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\grid.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\hide-text.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\image.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\labels.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\list-group.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\nav-divider.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\nav-vertical-align.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\opacity.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\pagination.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\panels.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\progress-bar.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\reset-filter.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\resize.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\responsive-visibility.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\size.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\tab-focus.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\table-row.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\text-emphasis.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\text-overflow.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\mixins\vendor-prefixes.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\modals.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\navbar.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\navs.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\normalize.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\pager.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\pagination.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\panels.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\popovers.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\print.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\progress-bars.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\responsive-embed.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\responsive-utilities.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\scaffolding.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\tables.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\theme.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\thumbnails.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\tooltip.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\type.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\utilities.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\variables.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\wells.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\~2ecsscomb.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\less\~2ecsslintrc.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\package.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\package.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\test-infra\npm-shrinkwrap.canonical.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\test-infra\npm-shrinkwrap.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\test-infra\requirements.txt.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\test-infra\s3__cache.py.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\test-infra\sauce__browsers.yml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\test-infra\shrinkwrap.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\test-infra\uncached-npm-install.sh.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\test-infra\_r_e_a_d_m_e.md.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\test-infra\_s3_cachefile.json.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\_c_h_a_n_g_e_l_o_g.md.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\_c_n_a_m_e.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\_c_o_n_t_r_i_b_u_t_i_n_g.md.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\_d_o_c_s-_l_i_c_e_n_s_e.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\_gruntfile.js.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\_l_i_c_e_n_s_e-_m_i_t.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\_l_i_c_e_n_s_e.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\_makefile.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\_r_e_a_d_m_e.md.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__config.yml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\ads.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\footer.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\header.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\nav-about.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\nav-components.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\nav-css.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\nav-customize.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\nav-getting-started.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\nav-javascript.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\nav-main.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\old-bs-docs.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__includes\social-buttons.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__layouts\customize.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__layouts\default.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\__layouts\home.html.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\~2eeditorconfig.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\~2egitattributes.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\~2egitignore.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_bootstrap\~2etravis.yml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_content\_web.config.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_images\favicon.ico.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_images\_web.config.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_licence.md.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_lombiq._pretty_good_bootstrap_base_theme.csproj.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_placement.info.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_properties\_assembly_info.cs.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_readme.md.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_reversed_page_title_builder.cs.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_scripts\_web.config.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\base.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\base.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\breadcrumbs.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\breadcrumbs.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\breadcrumbs.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\common.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\common.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\common.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\forms.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\forms.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\forms.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\general.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\general.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\general.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\media.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\media.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\media.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\misc.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\misc.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\misc.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\navigation.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\navigation.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\navigation.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\pagination.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\pagination.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\pagination.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\reset.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\reset.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\reset.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\responsive.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\responsive.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\site.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\site.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\site.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\structure.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\structure.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\structure.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\type.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\type.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\type.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\variables.css.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\variables.css.map.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\variables.less.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_styles\_web.config.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_theme.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_theme.txt.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_theme_zone_preview.png.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_additional_insertions.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_additional_resources.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_additional_top_resources.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_analytics.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_badge_of_honor.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_branding.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_document.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_insertions.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_layout.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_menu_item.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_resources.cshtml.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_views\_web.config.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\_web.config.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\data\~2ehgignore.i" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\fncache" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\phaseroots" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\undo" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\store\undo.phaseroots" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\undo.bookmarks" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\undo.branch" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\undo.desc" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\undo.dirstate" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\.editorconfig" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\.gitattributes" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\.gitignore" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\.travis.yml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\bower.json" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\CNAME" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\composer.json" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\CONTRIBUTING.md" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\dist\js\npm.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\about.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\apple-touch-icon-precomposed.png" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\apple-touch-icon.png" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\brand\bootstrap-outline.svg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\brand\bootstrap-punchout.svg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\brand\bootstrap-solid.svg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\css\docs.min.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\css\src\anchor.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\css\src\docs.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\css\src\pygments-manni.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\css\_src\docs.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\css\_src\pygments-manni.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\flash\ZeroClipboard.swf" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\img\components.png" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\img\devices.png" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\img\sass-less.png" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\customize.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\docs.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\ie-emulation-modes-warning.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\ie10-viewport-bug-workaround.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\ie8-responsive-file-warning.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\raw-files.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\src\application.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\src\customizer.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\vendor\anchor.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\vendor\autoprefixer.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\vendor\Blob.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\vendor\FileSaver.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\vendor\holder.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\vendor\jszip.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\vendor\less.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\vendor\uglify.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\vendor\ZeroClipboard.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\_src\application.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\_src\customizer.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\_vendor\blob.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\_vendor\filesaver.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\_vendor\holder.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\_vendor\jszip.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\_vendor\less.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\_vendor\uglify.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\assets\js\_vendor\ZeroClipboard.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\browser-bugs.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\components.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\css.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\customize.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\css\bootstrap-theme.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\css\bootstrap.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\css\bootstrap.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\css\bootstrap.min.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\js\bootstrap.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\js\bootstrap.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\dist\js\npm.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\blog\blog.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\blog\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\carousel\carousel.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\carousel\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\cover\cover.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\cover\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\dashboard\dashboard.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\dashboard\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\grid\grid.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\grid\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\jumbotron-narrow\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\jumbotron-narrow\jumbotron-narrow.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\jumbotron\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\jumbotron\jumbotron.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\justified-nav\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\justified-nav\justified-nav.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\navbar-fixed-top\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\navbar-fixed-top\navbar-fixed-top.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\navbar-static-top\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\navbar-static-top\navbar-static-top.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\navbar\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\navbar\navbar.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\non-responsive\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\non-responsive\non-responsive.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\offcanvas\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\offcanvas\offcanvas.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\offcanvas\offcanvas.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\blog.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\carousel.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\cover.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\dashboard.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\equal-height-columns.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\grid.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\jumbotron-narrow.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\jumbotron.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\justified-nav.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\navbar-fixed.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\navbar-static.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\navbar.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\non-responsive.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\offcanvas.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\sign-in.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\starter-template.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\sticky-footer-navbar.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\sticky-footer.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\screenshots\theme.jpg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\signin\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\signin\signin.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\starter-template\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\starter-template\starter-template.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\sticky-footer-navbar\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\sticky-footer-navbar\sticky-footer-navbar.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\sticky-footer\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\sticky-footer\sticky-footer.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\theme\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\theme\theme.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\tooltip-viewport\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\tooltip-viewport\tooltip-viewport.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\examples\tooltip-viewport\tooltip-viewport.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\favicon.ico" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\getting-started.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\javascript.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\LICENSE" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\migration.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\robots.txt" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\sitemap.xml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_data\browser-bugs.yml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_data\core-team.yml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_data\glyphicons.yml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_data\sass-team.yml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_data\showcase.yml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_data\translations.yml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\ads.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\alerts.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\badges.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\breadcrumbs.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\button-dropdowns.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\button-groups.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\dropdowns.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\glyphicons.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\input-groups.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\jumbotron.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\labels.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\list-group.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\media.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\navbar.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\navs.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\page-header.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\pagination.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\panels.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\progress-bars.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\responsive-embed.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\thumbnails.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\components\wells.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\buttons.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\code.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\forms.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\grid.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\helpers.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\images.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\less.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\overview.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\responsive-utilities.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\sass.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\tables.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\css\type.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\customizer-variables.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\footer.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\accessibility.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\browser-device-support.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\community.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\disabling-responsiveness.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\download.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\examples.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\grunt.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\license.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\template.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\third-party-support.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\tools.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\translations.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\getting-started\whats-included.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\header.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\affix.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\alerts.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\buttons.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\carousel.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\collapse.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\dropdowns.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\modal.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\overview.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\popovers.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\scrollspy.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\tabs.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\tooltips.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\js\transitions.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\nav\about.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\nav\components.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\nav\css.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\nav\customize.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\nav\getting-started.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\nav\javascript.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\nav\main.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\nav\migration.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_includes\social-buttons.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_jade\customizer-nav.jade" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_jade\customizer-variables.jade" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_layouts\default.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_layouts\home.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_plugins\bridge.rb" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\docs\_plugins\bugify.rb" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\Gruntfile.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\grunt\.jshintrc" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\grunt\configBridge.json" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\.jscsrc" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\.jshintrc" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\affix.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\alert.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\button.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\carousel.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\collapse.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\dropdown.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\modal.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\popover.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\scrollspy.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tab.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\index.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\README.md" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\.jshintrc" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\affix.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\alert.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\button.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\carousel.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\collapse.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\dropdown.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\modal.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\phantom.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\popover.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\scrollspy.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\tab.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\unit\tooltip.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\vendor\jquery.min.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\vendor\qunit.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\affix.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\alert.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\button.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\carousel.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\collapse.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\dropdown.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\modal.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\popover.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\scrollspy.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\tab.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tests\visual\tooltip.html" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\tooltip.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\js\transition.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\.csscomb.json" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\.csslintrc" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\alerts.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\badges.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\bootstrap.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\breadcrumbs.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\button-groups.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\buttons.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\carousel.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\close.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\code.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\component-animations.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\dropdowns.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\forms.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\glyphicons.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\grid.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\input-groups.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\jumbotron.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\labels.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\list-group.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\media.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\alerts.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\buttons.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\center-block.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\forms.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\gradients.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\grid.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\image.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\labels.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\list-group.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\opacity.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\pagination.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\panels.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\resize.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\size.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\table-row.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\modals.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\navbar.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\navs.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\normalize.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\pager.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\pagination.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\panels.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\popovers.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\print.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\progress-bars.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\responsive-embed.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\responsive-utilities.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\scaffolding.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\tables.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\theme.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\thumbnails.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\tooltip.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\type.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\utilities.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\variables.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\less\wells.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\LICENSE" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\package.js" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\package.json" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\README.md" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\test-infra\npm-shrinkwrap.json" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\test-infra\README.md" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\test-infra\requirements.txt" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\test-infra\S3Cachefile.json" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\test-infra\s3_cache.py" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\test-infra\uncached-npm-install.sh" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Bootstrap\_config.yml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Content\Web.config" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Images\favicon.ico" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Images\Web.config" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Licence.md" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Lombiq.PrettyGoodBootstrapBaseTheme.csproj" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Readme.md" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\breadcrumbs.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\breadcrumbs.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\breadcrumbs.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\common.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\common.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\common.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\forms.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\forms.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\forms.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\general.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\general.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\general.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\media.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\media.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\media.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\misc.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\misc.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\misc.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\navigation.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\navigation.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\navigation.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\pagination.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\pagination.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\pagination.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\reset.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\reset.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\reset.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\site.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\site.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\site.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\structure.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\structure.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\structure.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\type.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\type.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\type.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\variables.css" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\variables.css.map" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\variables.less" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Styles\Web.config" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Theme.png" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Theme.txt" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\ThemeZonePreview.png" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Views\AdditionalInsertions.cshtml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Views\AdditionalResources.cshtml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Views\AdditionalTopResources.cshtml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Views\Analytics.cshtml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Views\Branding.cshtml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Views\Document.cshtml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Views\Insertions.cshtml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Views\Layout.cshtml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Views\Resources.cshtml" />
+    <Content Include="Lombiq.PrettyGoodBootstrapBaseTheme\Web.config" />
+    <Content Include="Safetec\Content\facicon.ico" />
+    <Content Include="Safetec\Content\favicon.ico" />
+    <Content Include="Safetec\Content\logo.png" />
+    <Content Include="Safetec\Notes.html" />
+    <Content Include="Safetec\Scripts\custom.js" />
+    <Content Include="Safetec\theme.png" />
+    <Content Include="Safetec\theme.txt" />
+    <Content Include="cbca_national\Content\Web.config" />
+    <Content Include="cbca_national\Placement.info" />
+    <Content Include="cbca_national\Views\Branding.cshtml" />
+    <Content Include="cbca_national\Views\Shortlist.cshtml" />
+    <Content Include="cbca_national\Views\Winners.cshtml" />
+    <Content Include="cbca_national\web.config" />
+    <Content Include="cbca_national\Views\Resources.cshtml" />
+    <Content Include="cbca_national\Scripts\Web.config" />
+    <Content Include="cbca_national\Views\Document.cshtml" />
+    <Content Include="cbca_national\Views\Content-Book.Summary.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <None Include="testcbca\Views\TestSnippet.cshtml" />
+    <Content Include="TheAdmin\Scripts\admin.js" />
+    <Content Include="TheAdmin\Styles\ie.css" />
+    <Content Include="TheAdmin\Styles\ie7.css" />
+    <Content Include="TheAdmin\Styles\ie8.css" />
+    <Content Include="TheAdmin\Styles\images\adminNavBackground.gif" />
+    <Content Include="TheAdmin\Styles\images\error.gif" />
+    <Content Include="TheAdmin\Styles\images\icon-advisory.png" />
+    <Content Include="TheAdmin\Styles\images\icon-contribute.png" />
+    <Content Include="TheAdmin\Styles\images\icon-docs.png" />
+    <Content Include="TheAdmin\Styles\images\icon-friends.png" />
+    <Content Include="TheAdmin\Styles\images\icon-gallery.png" />
+    <Content Include="TheAdmin\Styles\images\icon-settings.png" />
+    <Content Include="TheAdmin\Styles\images\info.gif" />
+    <Content Include="TheAdmin\Styles\images\menu-default.png" />
+    <Content Include="TheAdmin\Styles\images\menu-glyph.png" />
+    <Content Include="TheAdmin\Styles\images\menuClosed.gif" />
+    <Content Include="TheAdmin\Styles\images\menuClosedHover.gif" />
+    <Content Include="TheAdmin\Styles\images\menuOpen.gif" />
+    <Content Include="TheAdmin\Styles\images\menuOpenHover.gif" />
+    <Content Include="TheAdmin\Styles\images\vinesBackgroundBottom.gif" />
+    <Content Include="TheAdmin\Styles\images\menu-filter.png" />
+    <Content Include="TheThemeMachine\Styles\Site.css" />
+    <Content Include="TheThemeMachine\Theme.png" />
+    <Content Include="TheThemeMachine\Theme.txt" />
+    <Content Include="SafeMode\Content\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SafeMode\Styles\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="TheAdmin\Views\Pager.cshtml" />
+    <Content Include="TheAdmin\Views\OrchardVersion.cshtml" />
+    <Content Include="TheThemeMachine\ThemeZonePreview.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="TheAdmin\Views\Menu.cshtml" />
+    <Content Include="TheThemeMachine\Views\Branding.cshtml" />
+    <Content Include="TheThemeMachine\Views\BadgeOfHonor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheAdmin\Styles\images\icons.png" />
+    <Content Include="TheAdmin\Styles\images\tableHeaderBackgroundRed.gif" />
+    <Content Include="TheAdmin\Styles\site.css" />
+    <Content Include="TheAdmin\Theme.txt" />
+    <Content Include="TheAdmin\Views\Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheAdmin\Styles\images\icons.psd" />
+    <Content Include="SafeMode\Content\orchard.ico" />
+    <Content Include="SafeMode\Styles\ie6.css" />
+    <Content Include="SafeMode\Styles\images\backgroundHeader.gif" />
+    <Content Include="SafeMode\Styles\images\backgroundVines.gif" />
+    <Content Include="SafeMode\Styles\images\orchardLogo.gif" />
+    <Content Include="SafeMode\Styles\site.css" />
+    <Content Include="SafeMode\Theme.png" />
+    <Content Include="SafeMode\Theme.txt" />
+    <Content Include="SafeMode\Views\Layout.cshtml" />
+    <Content Include="TheAdmin\Styles\images\backgroundGradient.gif" />
+    <Content Include="TheAdmin\Styles\images\backgroundHeader.gif" />
+    <Content Include="TheAdmin\Styles\images\orchardLogo.gif" />
+    <Content Include="TheAdmin\Theme.png" />
+    <Content Include="TheAdmin\Views\User.cshtml" />
+    <Content Include="TheAdmin\Views\Header.cshtml" />
+    <Content Include="TheThemeMachine\Views\Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheThemeMachine\Styles\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheAdmin\Scripts\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheAdmin\Styles\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheThemeMachine\Placement.info" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheAdmin\Views\LocalMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheAdmin\Views\Title.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Orchard\Orchard.Framework.csproj">
+      <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
+      <Name>Orchard.Framework</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheThemeMachine\Views\Pager.cshtml" />
+    <Content Include="TheThemeMachine\Views\Pager.First.cshtml" />
+    <Content Include="TheThemeMachine\Views\Pager.Last.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheAdmin\Views\ErrorPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheAdmin\Views\AdminCultureSelector.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Encompass\Content\Web.config" />
+    <Content Include="Encompass\Placement.info" />
+    <Content Include="Encompass\Scripts\Web.config" />
+    <Content Include="Encompass\Styles\Web.config" />
+    <Content Include="Encompass\Views\Branding.cshtml" />
+    <Content Include="Encompass\Views\Elements.Column.cshtml" />
+    <Content Include="Encompass\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hiphouse\Content\Web.config" />
+    <Content Include="hiphouse\Placement.info" />
+    <Content Include="hiphouse\Scripts\Web.config" />
+    <Content Include="hiphouse\Styles\Web.config" />
+    <Content Include="hiphouse\Views\Body.Editor-Textarea.cshtml" />
+    <Content Include="hiphouse\Views\Branding.cshtml" />
+    <Content Include="hiphouse\Views\Content-Page-to-be-deleteed.cshtml" />
+    <Content Include="hiphouse\Views\IsotopePhotoSwipeHiphouse.cshtml" />
+    <Content Include="hiphouse\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cascade.SimpleBootstrap\.hgignore" />
+    <Content Include="Cascade.SimpleBootstrap\Images\Web.config" />
+    <Content Include="Cascade.SimpleBootstrap\Readme.md" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\forms.less" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\general.css.map" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\general.less" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\site.css.map" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\site.less" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\variables.css.map" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\variables.less" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\Web.config" />
+    <Content Include="Cascade.SimpleBootstrap\Views\AdditionalInsertions.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Views\AdditionalResources.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Views\Analytics.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Web.config" />
+    <Content Include="Cascade.SimpleBootstrap\Views\Layout.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Views\Insertions.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Views\Menu.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Views\MenuItem.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Views\MenuItemLinkdd.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Views\Parts.Layout.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Views\Elements.Column.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Views\Elements.Grid.cshtml" />
+    <Content Include="Cascade.SimpleBootstrap\Styles\grid.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Lombiq.PrettyGoodBootstrapBaseTheme\.hg\attic\" />
+    <Folder Include="Safetec\Styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cascade.Admin\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Cascade.Admin\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Clayton\Content\Web.config" />
+    <Content Include="Clayton\Placement.info" />
+    <Content Include="Clayton\Scripts\Web.config" />
+    <Content Include="Clayton\Styles\Web.config" />
+    <Content Include="Clayton\Views\BadgeOfHonor.cshtml" />
+    <Content Include="Clayton\Views\Branding.cshtml" />
+    <Content Include="Clayton\Views\IsotopePhotoSwipe.cshtml" />
+    <Content Include="Clayton\Views\IsotopePhotoSwipeWorkshop.cshtml" />
+    <Content Include="Clayton\Views\Layout.cshtml" />
+    <Content Include="Clayton\Views\Parts.BlurbWidget.cshtml" />
+    <Content Include="Clayton\Views\PhotoSwipeItem.cshtml" />
+    <Content Include="Clayton\Views\PhotoSwipe__Phone.cshtml" />
+    <Content Include="Clayton\Web.config" />
+    <Content Include="Safetec\Placement.info" />
+    <Content Include="Safetec\Views\BadgeOfHonor.cshtml" />
+    <Content Include="Safetec\Views\Branding.cshtml" />
+    <Content Include="Safetec\Views\Content-Service.Detail.cshtml" />
+    <Content Include="Safetec\Views\Content-Service.Summary.cshtml" />
+    <Content Include="Safetec\Views\Content-Testimonial.Summary.cshtml" />
+    <Content Include="cbca_national\Views\Orchard.Search\Search\Index.cshtml" />
+    <Content Include="Safetec\Views\Parts\Common.Body.Summary.cshtml" />
+    <Content Include="Safetec\Views\Resources.cshtml" />
+    <Content Include="Safetec\Views\Testimonials.cshtml" />
+    <Content Include="Safetec\web.config" />
+    <Content Include="Safetec\Views\Content-Product.Summary.cshtml" />
+    <Content Include="Safetec\Views\Content-Product.Detail.cshtml" />
+    <Content Include="Safetec\Views\Layout.cshtml" />
+    <Content Include="Safetec\Views\NavSearch.cshtml" />
+    <Content Include="Safetec\Views\MiniCart.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" DependsOnTargets="AfterBuildCompiler">
+    <PropertyGroup>
+      <AreasManifestDir>$(ProjectDir)\..\Manifests</AreasManifestDir>
+    </PropertyGroup>
+  </Target>
+  <Target Name="AfterBuildCompiler" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)\..\$(ProjectName)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>30320</DevelopmentServerPort>
+          <DevelopmentServerVPath>/OrchardLocal</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://orchard.codeplex.com</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

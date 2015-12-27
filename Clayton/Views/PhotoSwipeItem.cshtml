@@ -1,0 +1,128 @@
+﻿@using Orchard.ContentManagement;
+@using Orchard.MediaLibrary.Models
+@using Cascade.PhotoSwipe.Models
+@using System.Linq
+@using Orchard.UI.Resources;
+@using Orchard.Core.Title.Models;
+@using Orchard.Tags.Models
+
+@{
+    Script.Require("FlipCard");
+    Style.Require("FlipCard");
+    var settings = WorkContext.CurrentSite.As<PhotoSwipeSettingsPart>();
+    MediaPart media = Model.Item.MediaPart;
+    ImagePart image = Model.Item.ImagePart;
+    string classes = Model.ItemClasses;
+
+    if (media != null && !string.IsNullOrEmpty(media.FileName))
+    {
+        string url = media.MediaUrl;
+
+        string versoUrl = null;
+        var fatherFigures = "/Father%20Figures";
+        if (url.Contains(fatherFigures))
+        {
+            string ext = Path.GetExtension(url);
+            string path = url.Substring(0, url.LastIndexOf('.'));
+            path = path.Replace(fatherFigures, fatherFigures + "%20Verso/");
+            versoUrl = path + "verso" + ext;
+        }
+
+        string title = "", caption = "";
+        List<string> thumbText = new List<string>(), psText = new List<string>();
+
+        if (!string.IsNullOrWhiteSpace(media.Title))
+        {
+            title = "<span class='title'>" + media.Title.Replace("\"", "") + "</span>";
+            if (settings.ShowThumbTitles)
+            {
+                thumbText.Add(title);
+            }
+            if (settings.ShowLightboxTitles)
+            {
+                psText.Add(title);
+            }
+        }
+        if (!string.IsNullOrWhiteSpace(media.Caption))
+        {
+            caption = "<span class='caption'>" + media.Caption.Replace("\"", "") + "</span>";
+            if (settings.ShowThumbCaptions)
+            {
+                thumbText.Add(caption);
+            }
+            if (settings.ShowLightboxCaptions)
+            {
+                psText.Add(caption);
+            }
+        }
+
+        // thumb title and caption
+        HtmlString thumbTitleCaption = new HtmlString(string.Join(" ", thumbText));
+
+        // ps title and caption
+        HtmlString psTitleCaption = new HtmlString(string.Join(" ", psText));
+
+
+
+
+        double aspect = (double)image.Width / (double)image.Height;
+        int thumbWidth = (int)(settings.ThumbHeight * aspect);
+        int psWidth = (int)(settings.Height * aspect);
+        HtmlString html = new HtmlString("<div class='card-container'>"
+            + "<div class='card'>"
+            + "<div class='front'><img  src='" + url
+            + "?format=jpg&mode=max&quality=" + settings.Quality
+            + "&width=" + settings.Width
+            + "&height=" + settings.Height
+            + "' alt='" + media.AlternateText
+            + "' itemprop='thumbnail' />"
+            + "</div>"
+
+            + "<div class='back'><img  src='" + versoUrl
+            + "?format=jpg&mode=max&quality=" + settings.Quality
+            + "&width=" + settings.Width
+            + "&height=" + settings.Height
+            + "' alt='" + media.AlternateText
+            + "' itemprop='thumbnail' />"
+            + "</div>"
+            + "</div>" //card
+
+            + "</div>"); //card-container
+
+        @* Set width of figure explicitly to ensure figcaption wraps correctly. Padding is 2 all round so add 4.
+            This setting must match the corresponding css padding (set by default in cascade-skin.scss)*@
+        var padding = 2;
+        <figure class="@classes" itemscope itemtype="http://schema.org/ImageObject" style="width:@(thumbWidth + padding * 2)px;">
+            @if (versoUrl == null)
+            {
+                <a data-title="@psTitleCaption"
+                   @* image src is decorated with imageresizer querystring, including height/width
+                      but the height/width are optimized by photoswipeInit so don't really matter *@
+                   href="@url?mode=max&format=jpg&quality=@settings.Quality&width=0&height=0" itemprop="contentUrl"
+                   @* data-size is used only to maintain the image aspect ratio *@
+                   data-size="@(image.Width.ToString() + "x" + image.Height.ToString())"
+                   @*  data-limit is the maximum allowed size for an image *@
+                   data-limit="@(settings.Width.ToString() + "x" + settings.Height.ToString())">
+                        @* This is the thumbnail: imageresizer height/width DOES matter here*@
+                        <img src="@url?format=jpg&mode=max&quality=@settings.ThumbnailQuality&width=@thumbWidth&height=@settings.ThumbHeight" alt="@media.AlternateText" itemprop="thumbnail" />
+                </a>
+            }
+            else
+            {
+                @* it's a flippable image: pass the flipping structure as the data-html; there is no href *@
+                <a data-title="@psTitleCaption" data-html="@html" itemprop="contentUrl" data-size="@(image.Width.ToString() + "x" + image.Height.ToString())" data-limit="@(settings.Width.ToString() + "x" + settings.Height.ToString())">
+                    @* thumbnail is the first of the two images (ie the front') *@
+                    <img src="@url?format=jpg&mode=max&quality=@settings.ThumbnailQuality&width=@thumbWidth&height=@settings.ThumbHeight" alt="@media.AlternateText" itemprop="thumbnail" />
+                </a>
+            }
+
+
+            @if (settings.ShowThumbTitles || settings.ShowThumbCaptions)
+            {
+                <figcaption itemprop="caption description">
+                    @thumbTitleCaption
+                </figcaption>
+            }
+        </figure>
+    }
+}

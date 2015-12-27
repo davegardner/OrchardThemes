@@ -1,0 +1,228 @@
+@using Orchard.ContentManagement
+@using Orchard.Fields.Fields
+@using Orchard.MediaLibrary.Fields
+@using Orchard.Taxonomies.Fields
+
+
+<div class='row'>
+
+    @{
+        var books_winners = ((IEnumerable<ContentItem>)Model.ContentItems).ToList();
+
+        foreach (var book in books_winners)
+        {
+            var winnerField = (BooleanField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Winner");
+            var winner = winnerField.Value;
+
+            var honourField = (BooleanField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Honours");
+            var honour = honourField.Value;
+
+            var imageField = (MediaLibraryPickerField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "CoverImage");
+            var media = imageField.MediaParts.FirstOrDefault();
+            var imageUrl = media == null ? "" : media.MediaUrl;
+
+            var titleField = (InputField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Title");
+            var title = titleField == null ? "" : titleField.Value;
+
+            var authorField = (InputField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Author");
+            var author = authorField == null ? "" : authorField.Value;
+
+            var illustratorField = (InputField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Illustrator");
+            var illustrator = illustratorField == null ? "" : illustratorField.Value;
+
+            var isbnField = (InputField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "ISBN");
+            var isbn = isbnField == null ? "" : isbnField.Value;
+
+            var awardsYearField = (NumericField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "AwardsYear");
+            var awardsYear = awardsYearField == null ? "" : awardsYearField.Value.ToString();
+
+            // can be > 1 Category
+            var categoryField = (EnumerationField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Category");
+            var category = categoryField == null ? "" : categoryField.Value;
+
+            // can only be one publisher but this code will work no matter what
+            var publisherField = (TaxonomyField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Publisher");
+            var publisher = publisherField == null ? "" : String.Join(" ", publisherField.Terms.Select(x => x.Name));
+
+            //---------------------------------------------------------------------------
+
+
+            <div class="col-md-4">
+                <div class="credit">Winner</div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td class="image"><img src="@imageUrl" alt=""></td>
+                                <td>
+                                    <div class="detail-heading">title</div>
+                                    <div class="detail-text">
+                                        @title
+                                    </div>
+                                    <div class="detail-heading">
+                                        @{
+            if (category == "Picture Book")
+            {
+                <span>illustrator/text</span>
+            }
+            else
+            {
+                <span>author / illustrator</span>
+            }
+                                        }
+                                    </div>
+                                    <div class="detail-text">
+                                        @{if (category == "Picture Book")
+                                        {
+                                            @illustrator;
+                                                        if (!string.IsNullOrEmpty(author))
+                                                        {
+                                                            <br /><span>Text. </span> @author;
+                                                        }
+                                        }
+                                        else
+                                        {
+                                            @author;
+                                                   if (!string.IsNullOrEmpty(illustrator))
+                                                   {
+                                                    <br /><span>Ill. </span> @illustrator;
+                                                   }
+                                        }
+                                        }
+                                    </div>
+                                    <div class="detail-heading">publisher</div>
+                                    <div class="detail-text">
+                                        @publisher
+                                    </div>
+                                    <div class="detail-heading">isbn</div>
+                                    <div class="detail-text">
+                                        @isbn
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="credit">Honours</div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td class="image"><img src="@imageUrl" alt=""></td>
+                                <td>
+                                    <div class="detail-heading">title</div>
+                                    <div class="detail-text">
+                                        @title
+                                    </div>
+                                    <div class="detail-heading">
+                                        @{
+            if (category == "Picture Book")
+            {
+                <span>illustrator/text</span>
+            }
+            else
+            {
+                <span>author / illustrator</span>
+            }
+                                        }
+                                    </div>
+                                    <div class="detail-text">
+                                        @{if (category == "Picture Book")
+                                        {
+                                            @illustrator;
+                                                        if (!string.IsNullOrEmpty(author))
+                                                        {
+                                                            <br /><span>Text. </span> @author;
+                                                        }
+                                        }
+                                        else
+                                        {
+                                            @author;
+                                                   if (!string.IsNullOrEmpty(illustrator))
+                                                   {
+                                                    <br /><span>Ill. </span> @illustrator;
+                                                   }
+                                        }
+                                        }
+                                    </div>
+                                    <div class="detail-heading">publisher</div>
+                                    <div class="detail-text">
+                                        @publisher
+                                    </div>
+                                    <div class="detail-heading">isbn</div>
+                                    <div class="detail-text">
+                                        @isbn
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="credit hidden-xs">Honours</div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td class="image"><img src="@imageUrl" alt=""></td>
+                                <td>
+                                    <div class="detail-heading">title</div>
+                                    <div class="detail-text">
+                                        @title
+                                    </div>
+                                    <div class="detail-heading">
+                                        @{
+            if (category == "Picture Book")
+            {
+                <span>illustrator/text</span>
+            }
+            else
+            {
+                <span>author / illustrator</span>
+            }
+                                        }
+                                    </div>
+                                    <div class="detail-text">
+                                        @{if (category == "Picture Book")
+                                        {
+                                            @illustrator;
+                                                        if (!string.IsNullOrEmpty(author))
+                                                        {
+                                                            <br /><span>Text. </span> @author;
+                                                        }
+                                        }
+                                        else
+                                        {
+                                            @author;
+                                                   if (!string.IsNullOrEmpty(illustrator))
+                                                   {
+                                                    <br /><span>Ill. </span> @illustrator;
+                                                   }
+                                        }
+                                        }
+                                    </div>
+                                    <div class="detail-heading">publisher</div>
+                                    <div class="detail-text">
+                                        @publisher
+                                    </div>
+                                    <div class="detail-heading">isbn</div>
+                                    <div class="detail-text">
+                                        @isbn
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+
+        }
+    }
+</div>
+

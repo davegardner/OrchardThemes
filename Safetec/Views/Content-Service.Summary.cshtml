@@ -1,0 +1,54 @@
+﻿@using Orchard.Core.Title.Models
+@using Orchard.Core.Common.Models
+@using Orchard.Utility.Extensions
+@using Orchard.MediaLibrary.Fields
+@using Orchard.ContentManagement
+@using Cascade.WebShop.Models
+
+@{
+
+    var contentItem = Model.ContentItem;
+    TitlePart titlePart = contentItem.TitlePart;
+    BodyPart bodyPart = contentItem.BodyPart;
+    MediaLibraryPickerField image = contentItem.Service.Image;
+    ProductPart productPart = contentItem.ProductPart;
+
+    // from Bertrand: someContentItem.ThePartThatHasTheField.TheField.TheNameOfThePropertyYouWantToAccess
+
+    var productId = (int)contentItem.Id;
+
+    string bodyHtml = bodyPart.Text;
+    var more = bodyHtml.IndexOf("<!--more-->");
+    if (more != -1)
+    {
+        bodyHtml = bodyHtml.Substring(0, more);
+    }
+    else
+    {
+        var firstP = bodyHtml.IndexOf("<p>");
+        var firstSlashP = bodyHtml.IndexOf("</p>");
+        if (firstP >= 0 && firstSlashP > firstP)
+        {
+            bodyHtml = bodyHtml.Substring(firstP, firstSlashP + 4 - firstP);
+        }
+    }
+    var body = new HtmlString(bodyHtml);
+}
+<div class="row">
+    <div class="col-sm-12">
+        <h2>@Html.ItemDisplayLink(titlePart.Title, (ContentItem)contentItem)</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-2">
+        <img src="@image.FirstMediaUrl" alt="" width="100%" />
+    </div>
+    <div class="col-sm-10">
+        <div>
+            <div>@body</div>
+            <p>@Html.ItemDisplayLink(T("Read more...").ToString(), (ContentItem)contentItem)</p>
+        </div>
+
+        <p>Price: @productPart.UnitPrice.ToString("c")</p>
+    </div>
+</div>

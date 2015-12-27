@@ -1,0 +1,28 @@
+﻿@using Orchard.ContentManagement;
+@using Cascade.WebShop.Models
+@{
+    Script.Require("Globalize.SetCulture");
+    Script.Require("WebShop.Review");
+    Style.Require("Cascade.WebShop.ShoppingCartWidget");
+
+    //var itemCount = (int)Model.ItemCount;
+    //var totalAmount = (decimal)Model.TotalAmount;
+    //var url = (string)Model.ContinueShoppingUrl;
+    var settings = WorkContext.CurrentSite.As<WebShopSettingsPart>();
+
+}
+@if (settings != null)
+{
+    <article class="summary hidden" id="shoppingCartSummary"
+             data-load-shoppingcart-url="@Url.Action("GetSummary", "ShoppingCart", new { area = "Cascade.WebShop" })">
+        @*<div data-bind="visible: itemCount() == 0" class="empty">
+            EMPTY. Please visit our <a href="@Url.Content(settings.ContinueShoppingUrl)">shop</a>
+        </div>*@
+        <div data-bind="visible: itemCount() > 0">
+            <div class="navbar-right navbar-form">
+                <span class="value" data-bind="text: itemCount"></span> items total <span data-bind="text: Globalize.format(totalAmount(), 'c')"></span>
+                <a class="btn btn-xs btn-primary" href="@Url.Action("Index", "ShoppingCart", new {area = "Cascade.WebShop"})">&nbsp;<i class="fa fa-shopping-cart"></i> Checkout</a>
+            </div>
+        </div>
+    </article>
+}

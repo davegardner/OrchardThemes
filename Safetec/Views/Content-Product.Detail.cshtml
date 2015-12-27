@@ -1,0 +1,52 @@
+﻿@using Orchard.Core.Title.Models
+@using Orchard.Core.Common.Models
+@using Orchard.Utility.Extensions
+@using Orchard.MediaLibrary.Fields
+@using Orchard.ContentManagement
+@using Cascade.WebShop.Models
+
+@{
+    if (Model.Title != null)
+    {
+        Layout.Title = Model.Title;
+    }
+
+    Model.Classes.Add("content-item");
+
+    var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+    Model.Classes.Add(contentTypeClassName);
+
+    var tag = Tag(Model, "article");
+
+    var contentItem = Model.ContentItem;
+    TitlePart titlePart = contentItem.TitlePart;
+    BodyPart bodyPart = contentItem.BodyPart;
+    MediaLibraryPickerField image = contentItem.Product.Image;
+    ProductPart productPart = contentItem.ProductPart;
+
+    // from Bertrand: someContentItem.ThePartThatHasTheField.TheField.TheNameOfThePropertyYouWantToAccess
+
+    var productId = (int)contentItem.Id;
+    Script.Require("AddToShoppingCart");
+
+}
+@tag.StartElement
+<div class="container">
+    <div class="row">
+        <h2>@titlePart.Title</h2>
+        <div class="col-sm-2">
+            <img src="@image.FirstMediaUrl" alt="" width="100%" />
+        </div>
+        <div class="col-sm-10">
+            <div>@Html.Raw(@bodyPart.Text)</div>
+            <p>Price: @productPart.UnitPrice.ToString("c")</p>
+            @using (Html.BeginFormAntiForgeryPost(Url.Action("Add", "ShoppingCart", new { id = productId, area = "Cascade.WebShop" })))
+            {
+                <button type="submit" class="btn btn-small">@T("Add to Shopping Cart")</button>
+
+            }
+
+        </div>
+    </div>
+</div>
+@tag.EndElement

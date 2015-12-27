@@ -1,0 +1,8 @@
+Name: Encompass
+Author: Cascade Pixels
+Website: http://cascadepixels.com.au
+Description: Extends Cascade.Bootstrap theme 
+Version: 1.1
+BaseTheme: Cascade.Bootstrap
+# todo: provide tags
+# Tags: Classic, Serif

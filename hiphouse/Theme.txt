@@ -1,0 +1,8 @@
+Name: hiphouse
+Author: Dave Gardner
+Website: http://www.cascadepixels.com.au
+Description: Builds on the Cascade.Bootstrap theme to provide hiphouse-specific styles. Remember to select the HipHouse Swatch on the Cascade.Bootstrap theme.
+Version: 1.0.3
+BaseTheme: Cascade.Bootstrap
+# todo: provide tags
+# Tags: Classic, Serif

@@ -1,0 +1,8 @@
+Name: Cascade.Admin
+Author: Dave Gardner
+Website: http://cascadepixels.com.au
+Description: This theme must be installed as a Module, and then extends and overrides the original TheAdmin theme.
+Version: 1.0.1
+BaseTheme: TheAdmin
+# todo: provide tags
+# Tags: Classic, Serif

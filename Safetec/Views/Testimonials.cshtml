@@ -1,0 +1,29 @@
+﻿@using Orchard.ContentManagement
+@using Orchard.Fields.Fields
+@using Orchard.Core.Common.Fields
+
+@{
+    IEnumerable<dynamic> items = Model.ContentItems;
+}
+<ul>
+    @foreach (var item in items)
+    {
+        var name = (string)item.Testimonial.Name.Value;
+        var testimonial = (string)item.Testimonial.Tertimonial.Value;
+
+        if (!String.IsNullOrEmpty(testimonial))
+        {
+            <li class="quote">
+                <blockquote>
+                    @testimonial
+                </blockquote>
+                @if (!String.IsNullOrEmpty(name))
+                {
+                    <p>@name</p>
+                }
+                <hr />
+            </li>
+        }
+    }
+</ul>
+

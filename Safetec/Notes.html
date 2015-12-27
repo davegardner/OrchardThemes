@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Safetec Notes</title>
+</head>
+<body>
+    <h1>Booking workflow</h1>
+    <p>
+        There are two ways to make a booking:
+    </p>
+    <ul>
+        <li>
+            Without paying.
+            An unpaid booking simply sends an email to Victor with the order details.
+            It is up to Victor to negotiate and secure payment.
+        </li>
+        <li>
+            With payment.
+            A paid booking also sends an email to Victor,
+            but the email is marked paid and Victor knows that the client has booked and paid for the work.
+        </li>
+    </ul>
+    <p>
+        Essentially, the same Order/Booking form is used but it has two buttons:
+    </p>
+    <div>
+        <button>Pay Now</button> <button>Pay Later</button>
+    </div>
+    <h2>Workflow Without Payment</h2>
+    <p>
+        Submitting the form by clicking [Pay Later] invokes some workflow that provides a notification to the client,
+        and sends emails to Victor and the client.
+    </p>
+    <h2>Workflow With Payment</h2>
+    <p>
+        If the client clicks [Pay Now] they walk thru the Checkout procedure.
+        At the end of the checkout process emails are sent to Victor and the client, marked "paid".
+        This is an all or nothing process where a successful booking and payment results in emails being sent,
+        but if the client doesn't complete the payment then no email is sent to anyone.
+    </p>
+    <p>
+        The email sent to the client is a Receipt and is NOT a tax invoice. It is up to Victor to confirm that payment is actually
+        received and to issue an appropriate tax invoice.
+    </p>
+ 
+    <p>
+        Also, put two buttons at the bottom:
+
+    </p>
+    <div>
+        <button>Pay Now</button> <button>Pay Later</button>
+    </div>
+    <p>
+        [Pay Now] proceeds to the Checkout/Summary page so the customer can pay.
+    </p>
+    <p>
+        [Pay Later] displays a page with the message:
+        <blockquote>
+            "Your booking has been accepted and you have elected to pay later and will be billed accordingly.
+            If you don't have an account with us then you will need to pay at the time service is provided".
+
+            <div>
+                <button>OK, I'll pay later</button> <button>Change (Pay now)</button>
+            </div>
+        </blockquote>
+    </p>
+    <h2>
+        Changes Needed to Implement Order Bookings
+    </h2>
+    <ul>
+        <li>Create an OrderPart from the existing Order Record. Requires minor changes to the Cascade.WebShop module.</li>
+        <li>
+            Add the following Fields to OrderPart, using Orchard admin Content Definition:
+            <ul>
+                <li>Preferred Days Enumeration</li>
+                <li>Preferred Times Enumeration</li>
+                <li>Specific Date (overrides Preferred Days/Times)</li>
+                <li>Notes Text</li>
+                <li>
+                    Service Address:
+                    <ul>
+                        <li>Address Text</li>
+                        <li>Suburb Text</li>
+                        <li>Postcode Text</li>
+                        <li>Contact Phone Text</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Remove 'Delivery Address' from SelectAddress.cshtml. No need to change anything else. This will apply to both new and returning customers. Make change by by overriding template in the theme </li>
+        <li>
+            Change CheckoutSummary.cshtml by overriding templates in the theme
+            <ul>
+                <li>show 'Service Address' instead of shipping address</li>
+                <li>add two buttons: <button>Pay Now</button> and <button>Pay Later</button></li>
+            </ul>
+        </li>
+        <li>Update text of buttons on ShoppingCart and Checkout pages to reflect workflow by overriding templates in the theme</li>
+        <li>Change price calculation to allow for volume discounts (ie multiple services on one booking/order). This will require implementation of a new Discount OrderDetail in WebShop. Do last, if necessary</li>
+    </ul>
+</body>
+</html>
