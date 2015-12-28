@@ -62,10 +62,10 @@
 
 	// ALLOW HEADER TO SCROLL BUT FIX MENU AT TOP
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 90) {
-			$('div.navbar').addClass('fix');
+		if ($(this).scrollTop() > 150) {
+			$('div.navbar-wrapper').addClass('fix');
 		} else {
-			$('div.navbar').removeClass('fix');
+			$('div.navbar-wrapper').removeClass('fix');
 		}
 	});
 });

@@ -2,7 +2,8 @@
 @using Orchard.ContentManagement
 @using Orchard.Utility.Extensions
 @{
-    if (Model.Title != null) {
+    if (Model.Title != null)
+    {
         Layout.Title = Model.Title;
     }
 
@@ -15,26 +16,29 @@
 
     var bookPart = Model.ContentItem.BookPart;
     var byLine = "";
-    if(String.IsNullOrEmpty(bookPart.Author.Value))
+    if (String.IsNullOrEmpty(bookPart.Author.Value))
     {
         byLine = String.IsNullOrEmpty(bookPart.Illustrator.Value) ? "" : "Illustrated by " + bookPart.Illustrator.Value + ". ";
     }
     else
     {
         byLine = bookPart.Author.Value;
-        byLine += String.IsNullOrEmpty(bookPart.Illustrator.Value) ?  "" : ". Illustrated by " + bookPart.Illustrator.Value + ". ";
+        byLine += String.IsNullOrEmpty(bookPart.Illustrator.Value) ? "" : ". Illustrated by " + bookPart.Illustrator.Value + ". ";
     }
 }
 @tag.StartElement
-    <div class="book-summary">
-        <div class="cover">
-            <img src="@bookPart.CoverImage.FirstMediaUrl" />
-        </div>
-        <div class="blurb">
-            <div class="category">@bookPart.Category.Value</div>
+<div class="book-summary">
+    <a class="cover" href="@Url.ItemDisplayUrl((ContentItem)Model.ContentItem)">
+        <img src="@bookPart.CoverImage.FirstMediaUrl" />
+    </a>
+    <div class="blurb">
+        <div class="category">@bookPart.Category.Value</div>
+        <div class="details">
             <div class="title">@Html.ItemDisplayLink((String)Model.TitlePart.Title, (ContentItem)Model.ContentItem)</div>
             <div class="byLine">@byLine</div>
-            <p>@bookPart.Summary.Value</p>
+            <div class="summary">@bookPart.Summary.Value</div>
         </div>
+        <a class="more btn btn-sm " href="@Url.ItemDisplayUrl((ContentItem)Model.ContentItem)"><i class='fa fa-arrow-right'></i></a>
     </div>
+</div>
 @tag.EndElement

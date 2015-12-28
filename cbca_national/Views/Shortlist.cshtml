@@ -5,126 +5,80 @@
 
 @using (Script.Foot())
 {
-<script type="text/javascript">
+    <script type="text/javascript">
         // NOTES:
         //  1. jQuery must be enabled for this to work
         //  2. Yout must add id='putThisInAContainer' to some element in this template
         $("#putThisInAContainer").closest(".zone").addClass("container");
-</script>
+    </script>
 }
 
 
-    <div class='shortlist' id="putThisInAContainer">
+<div class='shortlist' id="putThisInAContainer">
 
-        <div class='row'>
+    <div class='row'>
 
-            @{
-            var books = ((IEnumerable<ContentItem>
-                )Model.ContentItems).ToList();
+        @{
+            var books = ((IEnumerable<dynamic>)Model.ContentItems).ToList();
 
-                foreach (var book in books)
+            foreach (var book in books)
+            {
+                var author = book.BookPart.Author.Value;
+                var illustrator = book.BookPart.Illustrator.Value;
+                var byLine = author;
+                if (String.IsNullOrEmpty(byLine))
                 {
+                    byLine = illustrator;
+                }
+                else if (!String.IsNullOrEmpty(illustrator))
+                {
+                    byLine += " and " + illustrator;
+                }
 
-                var imageField = (MediaLibraryPickerField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "CoverImage");
-                var media = imageField.MediaParts.FirstOrDefault();
-                var imageUrl = media == null ? "" : media.MediaUrl;
-
-                var titleField = (InputField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Title");
-                var title = titleField == null ? "" : titleField.Value;
-
-                var authorField = (InputField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Author");
-                var author = authorField == null ? "" : authorField.Value;
-
-                var illustratorField = (InputField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Illustrator");
-                var illustrator = illustratorField == null ? "" : illustratorField.Value;
-
-                var isbnField = (InputField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "ISBN");
-                var isbn = isbnField == null ? "" : isbnField.Value;
-
-                var awardsYearField = (NumericField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "AwardsYear");
-                var awardsYear = awardsYearField == null ? "" : awardsYearField.Value.ToString();
-
+                var summary = book.BookPart.Summary.Value;
+                var imageUrl = book.BookPart.CoverImage == null ? "" : book.BookPart.CoverImage.FirstMediaUrl;
+                var title = book.TitlePart.Title;
+                var isbn = book.BookPart.ISBN.Value;
+                var awardsYear = book.BookPart.AwardsYear.Value;
                 // can be > 1 Category
-                var categoryField = (EnumerationField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Category");
-                var category = categoryField == null ? "" : categoryField.Value;
-
-                // can only be one publisher but this code will work no matter what
-                var publisherField = (TaxonomyField)book.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Publisher");
-                var publisher = publisherField == null ? "" : String.Join(" ", publisherField.Terms.Select(x => x.Name));
+                var category = book.BookPart.Category.Value;
+                // can only be one publisher but this will work no matter what
+                string publisher = "";
+                var terms = book.BookPart.Publisher.Terms;
+                if (terms != null && terms.Count > 0)
+                {
+                    publisher = terms[0].Name;
+                }
 
                 //---------------------------------------------------------------------------
 
-
-    
-
-    <div class='col-lg-4 col-sm-6'>
-
-        <table class="table table-condensed">
-            <tr>
-                <td class="image">
-                    <img src="@imageUrl" />
-                </td>
-                <td class="detail">
-                    <div class="detail-heading">
-                        title
-                    </div>
-                    <div class="detail-text">
-                        @title
-                    </div>
-                    <div class="detail-heading">
-                        @{
-                            if (category == "Picture Book")
-                            {
-                                <span >illustrator/text</span>
-                            }
-                            else
-                            {
-                                <span >author / illustrator</span>
-                            }
-                        }
-
-                    </div>
-                    <div class="detail-text">
-                        @{if (category == "Picture Book")
-                        {
-                        @illustrator;
-                        if (!string.IsNullOrEmpty(author))
-                        {
-                        <br /><span>Text. </span> @author;
-                        }
-                        }
-                        else
-                        {
-                        @author;
-                        if (!string.IsNullOrEmpty(illustrator))
-                        {
-                        <br /><span>Ill. </span> @illustrator;
-                        }
-                        }
-                        }
-                    </div>
-                    <div class="detail-heading">
-                        publisher
-                    </div>
-                    <div class="detail-text">
-                        @publisher
-                    </div>
-                    <div class="detail-heading">
-                        isbn
-                    </div>
-                    <div class="detail-text">
-                        @isbn
-                    </div>
-                </td>
-
-
-
-            </tr>
-        </table>
-    </div>
-
-    }
-    }
+                <div class='book-detail col-lg-6'>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td class="image">
+                                <img src="@imageUrl" />
+                            </td>
+                            <td class="detail">
+                                <div class="title">
+                                    @title
+                                </div>
+                                <div class="byLine">
+                                    @byLine
+                                </div>
+                                <div class="publisher">
+                                    @publisher
+                                </div>
+                                <div class="isbn">
+                                    ISBN: @isbn
+                                </div>
+                                <div class="summary">
+                                    @summary
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            }
+        }
     </div>
 </div>
-
