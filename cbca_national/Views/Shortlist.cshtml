@@ -23,28 +23,54 @@
 
             foreach (var book in books)
             {
-                var author = book.BookPart.Author.Value;
-                var illustrator = book.BookPart.Illustrator.Value;
-                var byLine = author;
-                if (String.IsNullOrEmpty(byLine))
+                var bookPart = book.BookPart;
+                var author = (bookPart.AuthorFirstName.Value + " " + bookPart.AuthorLastName.Value).Trim();
+                var illustrator = (bookPart.IllustratorFirstName.Value + " " + bookPart.IllustratorLastName.Value).Trim();
+                var byLine = "";
+                if (String.IsNullOrWhiteSpace(author) || String.IsNullOrWhiteSpace(illustrator))
                 {
-                    byLine = illustrator;
+                    // only one
+                    if(String.IsNullOrWhiteSpace(author)){
+                        byLine = illustrator;
+                    }
+                    else{
+                        byLine = author;
+                    }
                 }
-                else if (!String.IsNullOrEmpty(illustrator))
+                else // both
                 {
-                    byLine += " and " + illustrator;
+                    if (bookPart.Category.Value == "Picture Book")
+                    {
+                        byLine = illustrator + " (text: " + author + ")";
+                    }
+                    else
+                    {
+                        byLine = author + " (illust: " + author + ")";
+                    }
                 }
 
-                var summary = book.BookPart.Summary.Value;
-                var imageUrl = book.BookPart.CoverImage == null ? "" : book.BookPart.CoverImage.FirstMediaUrl;
+                //var author = book.BookPart.Author.Value;
+                //var illustrator = book.BookPart.Illustrator.Value;
+                //var byLine = author;
+                //if (String.IsNullOrEmpty(byLine))
+                //{
+                //    byLine = illustrator;
+                //}
+                //else if (!String.IsNullOrEmpty(illustrator))
+                //{
+                //    byLine += " and " + illustrator;
+                //}
+
+                //var summary = book.BookPart.Summary.Value;
+                var imageUrl = bookPart.CoverImage == null ? "" : book.BookPart.CoverImage.FirstMediaUrl;
                 var title = book.TitlePart.Title;
-                var isbn = book.BookPart.ISBN.Value;
-                var awardsYear = book.BookPart.AwardsYear.Value;
+                var isbn = bookPart.ISBN.Value;
+                var awardsYear = bookPart.AwardsYear.Value;
                 // can be > 1 Category
-                var category = book.BookPart.Category.Value;
+                var category = bookPart.Category.Value;
                 // can only be one publisher but this will work no matter what
                 string publisher = "";
-                var terms = book.BookPart.Publisher.Terms;
+                var terms = bookPart.Publisher.Terms;
                 if (terms != null && terms.Count > 0)
                 {
                     publisher = terms[0].Name;
@@ -71,14 +97,14 @@
                                 <div class="isbn">
                                     ISBN: @isbn
                                 </div>
-                                <div class="summary">
-                                    @summary
-                                </div>
+                                @*<div class="summary">
+                                        @summary
+                                    </div>*@
                             </td>
                         </tr>
                     </table>
-                </div>
+                            </div>
             }
         }
-    </div>
-</div>
+                        </div>
+                        </div>
