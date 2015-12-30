@@ -30,10 +30,12 @@
                 if (String.IsNullOrWhiteSpace(author) || String.IsNullOrWhiteSpace(illustrator))
                 {
                     // only one
-                    if(String.IsNullOrWhiteSpace(author)){
+                    if (String.IsNullOrWhiteSpace(author))
+                    {
                         byLine = illustrator;
                     }
-                    else{
+                    else
+                    {
                         byLine = author;
                     }
                 }
@@ -49,19 +51,6 @@
                     }
                 }
 
-                //var author = book.BookPart.Author.Value;
-                //var illustrator = book.BookPart.Illustrator.Value;
-                //var byLine = author;
-                //if (String.IsNullOrEmpty(byLine))
-                //{
-                //    byLine = illustrator;
-                //}
-                //else if (!String.IsNullOrEmpty(illustrator))
-                //{
-                //    byLine += " and " + illustrator;
-                //}
-
-                //var summary = book.BookPart.Summary.Value;
                 var imageUrl = bookPart.CoverImage == null ? "" : book.BookPart.CoverImage.FirstMediaUrl;
                 var title = book.TitlePart.Title;
                 var isbn = bookPart.ISBN.Value;
@@ -97,14 +86,17 @@
                                 <div class="isbn">
                                     ISBN: @isbn
                                 </div>
-                                @*<div class="summary">
-                                        @summary
-                                    </div>*@
+                                @if (bookPart.Summary != null)
+                                {
+                                    <div class="summary">
+                                        @bookPart.Summary.Value
+                                    </div>
+                                }
                             </td>
                         </tr>
                     </table>
-                            </div>
+                </div>
             }
         }
-                        </div>
-                        </div>
+    </div>
+</div>
