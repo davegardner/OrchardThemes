@@ -47,7 +47,7 @@
                     }
                     else
                     {
-                        byLine = author + " (illust: " + author + ")";
+                        byLine = author + " (illust: " + illustrator + ")";
                     }
                 }
 
@@ -64,7 +64,8 @@
                 {
                     publisher = terms[0].Name;
                 }
-
+                var award = bookPart.Award.Value;
+                
                 //---------------------------------------------------------------------------
 
                 <div class='book-detail col-lg-6'>
@@ -74,6 +75,9 @@
                                 <img src="@imageUrl" />
                             </td>
                             <td class="detail">
+                                <div class="gongs @award">
+                                    @award
+                                </div>
                                 <div class="title">
                                     @title
                                 </div>

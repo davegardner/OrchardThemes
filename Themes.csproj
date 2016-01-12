@@ -239,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Safetec\Styles\" />
+    <Folder Include="Safetec\Views\Cascade.Webshop\Views\Parts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Cascade.Admin\Web.Debug.config">
@@ -276,6 +277,8 @@
     <Content Include="Safetec\Views\Layout.cshtml" />
     <Content Include="Safetec\Views\NavSearch.cshtml" />
     <Content Include="Safetec\Views\MiniCart.cshtml" />
+    <Content Include="cbca_national\Views\Content-Book.Detail.cshtml" />
+    <Content Include="Safetec\Views\Parts\Cascade.Webshop.ShoppingCartWidget.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
