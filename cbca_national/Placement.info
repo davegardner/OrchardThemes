@@ -3,6 +3,10 @@
     <Place Parts_Common_Metadata="-"/>
     <Place Parts_Title="-"/>
   </Match>
+  <Match ContentType="Media">
+    <Place Parts_Common_Metadata="-"/>
+    <Place Parts_Title="-"/>
+  </Match>
   <Match ContentType="Form">
     <Place Parts_Common_Metadata="-"/>
     <Place Parts_Title="-"/>
@@ -27,4 +31,5 @@
              Parts_Common_Metadata="-" />
     </Match>
   </Match>
+
 </Placement>

@@ -2,5 +2,5 @@ Name: cbca_national
 Author: Cascade Pixels
 Website: http://cascadepixels.com.au
 Description: Custom theme for CBCA
-Version: 1.1
+Version: 1.2
 BaseTheme: Cascade.Bootstrap

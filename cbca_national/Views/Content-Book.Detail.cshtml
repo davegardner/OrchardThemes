@@ -51,26 +51,6 @@
 
 }
 
-@*@tag.StartElement
-    <div class="book-summary">
-        <a class="cover" href="@Url.ItemDisplayUrl((ContentItem)Model.ContentItem)">
-            <img src="@bookPart.CoverImage.FirstMediaUrl" />
-        </a>
-        <div class="blurb">
-            <div class="category">@bookPart.Category.Value</div>
-            <div class="details">
-                <div class="title">@Html.ItemDisplayLink((String)Model.TitlePart.Title, (ContentItem)Model.ContentItem)</div>
-                <div class="byLine">@byLine</div>
-                @if (bookPart.Summary != null)
-                {
-                    <div class="summary">@bookPart.Summary.Value</div>
-                }
-            </div>
-            <a class="more btn btn-sm " href="@Url.ItemDisplayUrl((ContentItem)Model.ContentItem)"><i class='fa fa-arrow-right'></i></a>
-        </div>
-    </div>
-    @tag.EndElement*@
-
 <div class="container">
     <div class="row">
         <div class='book-detail col-lg-12'>

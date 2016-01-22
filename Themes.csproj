@@ -105,7 +105,6 @@
     <Content Include="cbca_national\web.config" />
     <Content Include="cbca_national\Views\Resources.cshtml" />
     <Content Include="cbca_national\Scripts\Web.config" />
-    <Content Include="cbca_national\Views\Document.cshtml" />
     <Content Include="cbca_national\Views\Content-Book.Summary.cshtml">
       <SubType>Code</SubType>
     </Content>
@@ -279,6 +278,10 @@
     <Content Include="Safetec\Views\MiniCart.cshtml" />
     <Content Include="cbca_national\Views\Content-Book.Detail.cshtml" />
     <Content Include="Safetec\Views\Parts\Cascade.Webshop.ShoppingCartWidget.cshtml" />
+    <Content Include="cbca_national\Views\SearchButtonSnippet.cshtml" />
+    <Content Include="cbca_national\Views\Layout-temp.cshtml" />
+    <Content Include="cbca_national\Views\CBCAHeaderSnippet.cshtml" />
+    <Content Include="cbca_national\Views\MenuItemLinkdd.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

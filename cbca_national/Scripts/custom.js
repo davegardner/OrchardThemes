@@ -62,7 +62,7 @@
 
 	// ALLOW HEADER TO SCROLL BUT FIX MENU AT TOP
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 150) {
+		if ($(this).scrollTop() > 118) {
 			$('div.navbar-wrapper').addClass('fix');
 		} else {
 			$('div.navbar-wrapper').removeClass('fix');
