@@ -1,0 +1,20 @@
+﻿@{
+    // Model is Model.Menu from the layout (Layout.Menu)
+    Model.Classes.Add("nav");
+    var tag = Tag(Model, "ul");
+}
+<header class="header clearfix">
+    @*<img src="Themes/Crisp/images/cascadeprintroom_Logo80x79.png" class="print logo" alt="name of company">*@
+    <div class="container">
+        <nav id="main_menu" class="ddsmoothmenu">
+            @tag.StartElement
+            @* see MenuItem shape template *@
+            @DisplayChildren(Model)
+            @tag.EndElement
+        </nav>
+        <a href="~/">
+            <div id="logo">
+            </div> 
+        </a>
+    </div>
+</header>

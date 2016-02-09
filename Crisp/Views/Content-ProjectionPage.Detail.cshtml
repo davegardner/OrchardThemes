@@ -1,0 +1,41 @@
+﻿@*  The purpose of this template is to inject a url for the WebShop AddToCart function.
+    This is required by the Add to cart button on the Lightbox expanded image display.
+    I was unable to find a more specific template, but the additional data attribute
+    doesn't do any harm when it's not needed.
+*@
+
+@using Orchard.Utility.Extensions;
+@{
+	Layout.Title = Model.Title;
+	var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+
+	WorkContext.Layout.SubPageTitle.Add(Model.Header, "10");
+
+	var tag = Tag(Model, "article");
+    tag.AddCssClass(contentTypeClassName);
+    tag.AddCssClass("content-item");
+    var url = Url.Action("AddToCart", "ShoppingCart", new { area = "Cascade.WebShop" });
+    tag.AddCssClass("addtocartbuttons");
+    tag.MergeAttribute("data-addtocart-url", url);
+}
+
+@if (Model.Header != null)
+		{
+			<h1>@Display(Model.Header)</h1>
+		}
+		
+@tag.StartElement
+	<header>
+		@if (Model.Meta != null) {
+		<div class="metadata">
+			@Display(Model.Meta)
+		</div>
+		}
+	</header>
+	@Display(Model.Content)
+	@if(Model.Footer != null) {
+	<footer>
+		@Display(Model.Footer)
+	</footer>
+	}
+@tag.EndElement

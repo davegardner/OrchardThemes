@@ -17,6 +17,13 @@
     var bookPart = Model.ContentItem.BookPart;
     var author = (bookPart.AuthorFirstName.Value + " " + bookPart.AuthorLastName.Value).Trim();
     var illustrator = (bookPart.IllustratorFirstName.Value + " " + bookPart.IllustratorLastName.Value).Trim();
+    var awardsYear = bookPart.AwardsYear.Value;
+    var category = bookPart.Category.Value;
+
+    var award = bookPart.Winner.Value ? "Winner" :
+        bookPart.Honours.Value ? "Honours" :
+        bookPart.Shortlisted.Value ? "Shortlisted" : "";
+        
     var byLine = "";
     if (String.IsNullOrWhiteSpace(author) || String.IsNullOrWhiteSpace(illustrator))
     {
@@ -54,15 +61,16 @@
 <div class="container">
     <div class="row">
         <div class='book-detail col-lg-12'>
-            <table class="table table-condensed">
+            <h1>
+                @Model.ContentItem.TitlePart.Title
+            </h1>
+
+            <table>
                 <tr>
                     <td class="image">
                         <img src="@bookPart.CoverImage.FirstMediaUrl" />
                     </td>
                     <td class="detail">
-                        <div class="title">
-                            @Model.ContentItem.TitlePart.Title
-                        </div>
                         <div class="byLine">
                             @byLine
                         </div>
@@ -72,6 +80,10 @@
                         <div class="isbn">
                             ISBN: @bookPart.ISBN.Value
                         </div>
+                        <div class="gongs @award">
+                            @award @awardsYear @category
+                        </div>
+
                         @if (bookPart.Summary != null)
                         {
                             <div class="summary">

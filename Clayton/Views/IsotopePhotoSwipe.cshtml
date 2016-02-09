@@ -72,7 +72,7 @@
 
 
                 // Isotope Filtering
-                //var active = $($('#isotope-filters .active')[0]);
+                var active = $($('#isotope-filters .active')[0]);
 
                 $('#isotope-filters a').on('click', function(e){
                     activate($(this));
@@ -80,12 +80,16 @@
 
                 initPhotoSwipe(selectedClass);
 
+                setTimeout(10000, selectClass(selectedClass));
 
-                // Remove spinner and show gallery
-                $('.spinner').removeClass('show-fast').addClass('hide-fast');
-                $('#gallery').removeClass('hide-fast').addClass('show-fast');
-                var active = $('#isotope-filters li a[data-filter=' + selectedClass + ']');
-                activate(active);
+                function selectClass(selectedClass)
+                {
+                    // Remove spinner and show gallery
+                    $('.spinner').removeClass('show-fast').addClass('hide-fast');
+                    $('#gallery').removeClass('hide-fast').addClass('show-fast');
+                    var active = $('#isotope-filters li a[data-filter=' + selectedClass + ']');
+                    activate(active);
+                }
 
                 function isTrue(v){
                     return v == 'True';
@@ -93,7 +97,7 @@
                 
                 function activate(el){
                     // set active tag
-                    if(active)
+                    if(typeof active !== 'undefined' && active != null)
                         active.removeClass('active');
                     active = el
                     active.addClass('active');

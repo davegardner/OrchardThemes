@@ -1,0 +1,75 @@
+﻿@using System.Web.Mvc;
+@{
+//    String logintext = "<i class='icon-user'></i>" + " Log In";
+
+    <!-- facebook 
+    Script.Include("facebook.js");
+    SetMeta("og:title", "Cascade Print Room");
+    SetMeta("og:type", "website");
+    SetMeta("og:url", "http://cascadeprintroom.com.au");
+    SetMeta("og:image", "http://cascadeprintroom.com.au/Media/Default/JeffPrints/Jeff%20Gardner.tif?width=600&height=800&borderWidth=0&borderColor=black&mode=max");
+    SetMeta("og:site_name", "Cascade Print Room");
+    SetMeta("fb:admins", "100000086714757");
+    -->
+}
+
+<ul class="visuallyhidden" id="top">
+    <li><a href="#nav" title="Skip to navigation" accesskey="n">Skip to navigation</a></li>
+    <li><a href="#page" title="Skip to content" accesskey="c">Skip to content</a></li>
+</ul>
+
+<h5 class="mobile_nav"><a href="javascript:void(0)">&nbsp;<span></span></a></h5>
+
+<section class="container preheader">
+        <div class="navbar">
+            <div id="header" >
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="dropdown">
+                        @if (WorkContext.CurrentUser != null)
+                        {
+                            dynamic user = WorkContext.CurrentUser.ContentItem;
+                            
+                            <a href="#" class="dropdown-toggle" id="dropdown-user" data-toggle="dropdown">@WorkContext.CurrentUser.UserName <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink(T("Change Password").ToString(), "ChangePassword", new { Controller = "Account", Area = "Orchard.Users" })</li>
+                                <li>@Html.ActionLink(T("Log Off").ToString(), "LogOff", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl })</li>
+                                @if (AuthorizedFor(Orchard.Security.StandardPermissions.AccessAdminPanel))
+                                {
+                                    <li class="divider"></li>
+                                    <li>@Html.ActionLink(T("Dashboard").ToString(), "Index", new { Area = "Dashboard", Controller = "Admin" })</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("LogOn", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = (Request.QueryString["ReturnUrl"] ?? Request.RawUrl) })"><i class='icon-user'></i> Log On</a>
+                        }
+
+                    </li>
+                </ul>
+                <div class="search-wrapper">
+                    @using (Html.BeginForm("index", "search", new { area = "Orchard.Search" }, FormMethod.Get, new { @class = "search" }))
+                    {
+                        <div id="search-trigger">Search:</div>
+                        <input type="text" name="q" id="q" placeholder="search + enter" />
+                    }
+                </div>
+                <div class="phone"><a href="tel:0408844152" class="tele">0408 844 152</a></div>
+                <ul class="social">
+                    <li><a class="socicon small rss" href="~/rss?projection=61" data-placement="bottom" title="Subscribe to our News and Events RSS feed"></a></li>
+                    <li><a class="socicon small facebook" href="http://www.facebook.com/pages/Cascade-Print-Room/255996014459077" data-placement="bottom" title="Follow us on Facebook"></a></li>
+                    <li><a class="icon-envelope" href="http://eepurl.com/vyo61" data-placement="bottom" title="Subscribe to our Email newsletter"></a></li>
+                    <li >
+                        <a class="socicon small google" href="//plus.google.com/+CascadeprintroomAu/posts" data-placement="bottom" title="Visit our Google + page"></a> 
+                    </li>
+
+                    <!--<li><a class="socicon small twitterbird" href="#" data-placement="bottom" title="Follow us on Twitter"></a></li>
+        <li><a class="socicon small linkedin" href="#" data-placement="bottom" title="Follow us on LinkedIn"></a></li>
+        <li><a class="socicon small dribbble" href="#" data-placement="bottom" title="Follow us on dribble"></a></li>
+        <li><a class="socicon small vimeo" href="#" data-placement="bottom" title="Follow us on Vimeo"></a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

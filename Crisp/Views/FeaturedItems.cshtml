@@ -1,0 +1,12 @@
+﻿@using Orchard.Mvc;
+@{
+    IEnumerable<dynamic> items = Model.ContentItems;
+    
+}
+@foreach (var item in items)
+{
+            
+    <img class="featured-item" src="item.Url?height=350" />
+
+}
+

@@ -1,0 +1,289 @@
+@functions {
+    // To support the layout classifaction below. Implementing as a razor function because we can, could otherwise be a Func<string[], string, string> in the code block following.
+    string CalcuClassify(string[] zoneNames, string classNamePrefix)
+    {
+        var zoneCounter = 0;
+        var zoneNumsFilled = string.Join("", zoneNames.Select(zoneName => { ++zoneCounter; return Model[zoneName] != null ? zoneCounter.ToString() : ""; }).ToArray());
+        return HasText(zoneNumsFilled) ? classNamePrefix + zoneNumsFilled : "";
+    }
+}
+@{
+    /* Global includes for the theme
+    ***************************************************************/
+
+    SetMeta("X-UA-Compatible", "IE=edge,chrome=1");
+    SetMeta("W3Techs-verification", "28JNteNWU0zb4msH");
+    SetMeta("viewport", "width=device-width, initial-scale=1.0");
+    SetMeta("apple-mobile-web-app-capable", "yes");
+
+    <!-- jquery and modernizr at the top, other js at the foot -->
+    Script.Require("jQuery");
+    Script.Include("modernizr.custom.87724.js");
+
+    Style.Include("bootstrap.min.css");
+    // Style.Include("bootstrap-responsive.css");
+    Style.Include("style.css");
+    Style.Include("header-1.css");
+    Style.Include("lemmon-slider.css");
+    Style.Include("crisp.css");
+    //Style.Include("ddsmoothmenu.css");
+    
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png" />
+    
+    using (Script.Foot())
+    {
+        Script.Include("bootstrap.js");
+        Script.Include("jquery.dcjqaccordion.2.7.min.js"); // mobile multi-level accordion menu
+        Script.Include("jquery.easytabs.min.js");  // tabs / testimoniala
+        Script.Include("slide-to-top-accordion-min.js"); // slide to top accordion toggle
+        Script.Include("jquery.easing-1.3.min.js"); // easing
+        Script.Include("jquery.flexslider-min.js"); // flexslider content slider twitter slider and initializations
+        Script.Include("responsive-tables.js"); // responsive tables
+        Script.Include("jquery.fitvid.js"); // responsive videos
+        Script.Include("lemmon-slider.js"); // lemmon slider
+        Script.Include("ddsmoothmenu-min.js"); // desktop edge detect menu
+        Script.Include("scripts.js"); // initialize all scripts
+    }
+
+    /* Some useful shortcuts or settings
+    ***************************************************************/
+
+    Func<dynamic, dynamic> Zone = x => Display(x); // Zone as an alias for Display to help make it obvious when we're displaying zones
+
+    /* Layout classification based on filled zones
+    ***************************************************************/
+
+    //Add classes to the wrapper div to toggle aside widget zones on and off
+    var asideClass = CalcuClassify(new[] { "AsideFirst", "AsideSecond" }, "aside-"); // for aside-1, aside-2 or aside-12 if any of the aside zones are filled
+    if (HasText(asideClass))
+    {
+        Model.Classes.Add(asideClass);
+    }
+
+    //Add classes to the wrapper div to toggle tripel widget zones on and off
+    var tripelClass = CalcuClassify(new[] { "TripelFirst", "TripelSecond", "TripelThird" }, "tripel-"); // for tripel-1, triple-2, etc. if any of the tripel zones are filled
+    if (HasText(tripelClass))
+    {
+        Model.Classes.Add(tripelClass);
+    }
+
+    //Add classes to the wrapper div to toggle quad widget zones on and off
+    var footerQuadClass = CalcuClassify(new[] { "FooterQuadFirst", "FooterQuadSecond", "FooterQuadThird", "FooterQuadFourth" }, "split-"); // for quad-1, quad-2, etc. if any of the quad zones are filled
+    if (HasText(footerQuadClass))
+    {
+        Model.Classes.Add(footerQuadClass);
+    }
+
+    /* Inserting some ad hoc shapes
+    ***************************************************************/
+
+    //WorkContext.Layout.Header.Add(New.Branding(), "1"); // Site name and link to the home page
+    WorkContext.Layout.Header.Add(New.Preheader(), "1"); // Preheader message
+    WorkContext.Layout.Footer.Add(New.Copyright(), "5"); // Copyright message
+    //WorkContext.Layout.Header.Add(New.User(), "0"); // Login and dashboard links
+    //WorkContext.Layout.Header.Add(New.Search(), "3"); // Search box for header
+
+    /* Last bit of code to prep the layout wrapper
+    ***************************************************************/
+
+    Model.Id = "layout-wrapper";
+    var tag = Tag(Model, "div"); // using Tag so the layout div gets the classes, id and other attributes added to the Model
+    var mainDivClass = string.Empty; // creating a string variable to hold the class name to add if AsideFirst is not null
+
+    /* Work out how many Triples there are and apply appropriate class 
+     *************************************************************/
+    int tripelCount = 0;
+    string tripleClass = "span12";
+    string[] triples = { "TripelFirst", "TripelSecond", "TripelThird" };
+    foreach (string triple in triples)
+    {
+        if (HasText(Model[triple]))
+        {
+            ++tripelCount;
+        }
+    }
+    if (tripelCount > 0)
+    {
+        tripleClass = "span" + 12 / tripelCount;
+    }
+        
+    /* Work out how many Quads there are and apply appropriate class 
+    *************************************************************/
+    int quadCount = 0;
+    string quadClass = "span12";
+    string[] quads = { "FooterQuadFirst", "FooterQuadSecond", "FooterQuadThird", "FooterQuadFourth" };
+    foreach (string quad in quads)
+    {
+        if (HasText(Model[quad]))
+        {
+            ++quadCount;
+        }
+    }
+    if (quadCount > 0)
+    {
+        quadClass = "span" + 12 / quadCount;
+    }
+
+    // make this "row" for a non-fluid layout; "row-fluid" for a fluid layout
+    string rowClass = "row-fluid";
+}
+@tag.StartElement
+<div id="layout-header">
+    @Zone(Model.Header)
+</div>
+@if (Model.Navigation != null)
+{
+    @Zone(Model.Navigation)
+}
+<!-- BeforeMain Main hero unit for a primary marketing message or call to action -->
+@if (Model.BeforeMain != null)
+{
+    <div class="container hero-unit center no-border no-padding-bottom">
+        @Zone(Model.BeforeMain)
+    </div>
+}
+<!-- Featured items -->
+@if (Model.Featured != null)
+{
+    @Zone(Model.Featured)
+}
+<div id="layout-main">
+    <div class="container">
+        <div class="@rowClass">
+            <!-- Create a span of 3 and 9 if there is content in the AsideFirst zone or AsideSecond zone, or 3-6-3 if both, otherwise create a span of 12 -->
+            @if (Model.AsideFirst != null && Model.AsideSecond != null)
+            {
+                mainDivClass = "span6";
+            }
+            else if (Model.AsideFirst != null || Model.AsideSecond != null)
+            {
+                mainDivClass = "span9";
+            }
+            else
+            {
+                mainDivClass = "span12";
+            }
+            @if (Model.AsideFirst != null)
+            {
+                <div class="span3">
+                    <div id="aside-first" class="well sidebar-nav">
+                        @Zone(Model.AsideFirst)
+                    </div>
+                </div>
+            }
+            <div class="@mainDivClass">
+                <!-- Place messages above Content -->
+                @if (Model.Messages != null)
+                {
+                    <div id="messages">
+                        @Zone(Model.Messages)
+                    </div>
+                }
+                @if (Model.BeforeContent != null)
+                {
+                    <div id="before-content">
+                        @Zone(Model.BeforeContent)
+                    </div>
+                }
+                @if (Model.Content != null)
+                {
+                    <div id="content">
+                        @Zone(Model.Content)
+                    </div>
+                }
+                @if (Model.AfterContent != null)
+                {
+                    <div id="after-content">
+                        @Zone(Model.AfterContent)
+                    </div>
+                }
+            </div>
+            @if (Model.AsideSecond != null)
+            {
+                <div class="span3">
+                    <div id="aside-second" class="well sidebar-nav">
+                        @Zone(Model.AsideSecond)
+                    </div>
+                </div>
+            }
+        </div>
+        @if (Model.AfterMain != null)
+        {
+            <div id="layout-after-main">
+                @Zone(Model.AfterMain)
+            </div>
+        }
+    </div>
+  
+    @if (tripelCount > 0)
+    {
+        <div class="container">
+            <div id="equalHeights" class="@rowClass equalHero">
+                @if (Model.TripelFirst != null)
+                {
+                    <div class="@tripleClass">
+                        <div id="tripel-first" class="well">
+                            @Zone(Model.TripelFirst)
+                        </div>
+                    </div>
+                }
+                @if (Model.TripelSecond != null)
+                {
+                    <div class="@tripleClass">
+                        <div id="tripel-second" class="well">
+                            @Zone(Model.TripelSecond)
+                        </div>
+                    </div>
+                }
+                @if (Model.TripelThird != null)
+                {
+                    <div class="@tripleClass">
+                        <div id="tripel-third" class="well">
+                            @Zone(Model.TripelThird)
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+   
+    @if (quadCount > 0 || HasText(Model.Footer))
+    {
+        <footer id="footer" class="clearfix">
+            <div class="container">
+                <div class="@rowClass">
+                @if (Model.FooterQuadFirst != null)
+                {
+                    <div id="footer-quad-first" class="@quadClass">
+                        @Zone(Model.FooterQuadFirst)
+                    </div>
+                }
+                @if (Model.FooterQuadSecond != null)
+                {
+                    <div id="footer-quad-second" class="@quadClass">
+                        @Zone(Model.FooterQuadSecond)
+                    </div>
+                }
+                @if (Model.FooterQuadThird != null)
+                {
+                    <div id="footer-quad-third" class="@quadClass">
+                        @Zone(Model.FooterQuadThird)
+                    </div>
+                }
+                @if (Model.FooterQuadFourth != null)
+                {
+                    <div id="footer-quad-fourth" class="@quadClass">
+                        @Zone(Model.FooterQuadFourth)
+                    </div>
+                }
+                </div>
+            </div>
+                <div id="footer-sig" class="container">
+                    @Zone(Model.Footer)
+                </div>
+        </footer>
+    }
+</div>
+@tag.EndElement

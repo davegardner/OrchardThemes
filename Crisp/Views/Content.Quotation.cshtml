@@ -1,0 +1,22 @@
+﻿@using Orchard.Utility.Extensions;
+@{
+	Layout.Title = Model.Title;
+	var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+
+	WorkContext.Layout.SubPageTitle.Add(Model.Header, "10");
+
+	var tag = Tag(Model, "article");
+    tag.AddCssClass("content-item");
+	tag.AddCssClass(contentTypeClassName);
+}
+
+@tag.StartElement
+    <p>
+    @Model.ContentItem.Quotation.Quote.Value
+    </p>
+
+
+<footer>
+    @Model.ContentItem.Quotation.Author.Value
+</footer>
+@tag.EndElement

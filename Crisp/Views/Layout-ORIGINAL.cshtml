@@ -1,0 +1,252 @@
+@functions {
+    // To support the layout classifaction below. Implementing as a razor function because we can, could otherwise be a Func<string[], string, string> in the code block following.
+    string CalcuClassify(string[] zoneNames, string classNamePrefix)
+    {
+        var zoneCounter = 0;
+        var zoneNumsFilled = string.Join("", zoneNames.Select(zoneName => { ++zoneCounter; return Model[zoneName] != null ? zoneCounter.ToString() : ""; }).ToArray());
+        return HasText(zoneNumsFilled) ? classNamePrefix + zoneNumsFilled : "";
+    }
+}
+@{
+    /* Global includes for the theme
+    ***************************************************************/
+
+    SetMeta("X-UA-Compatible", "IE=edge,chrome=1");
+
+    <!-- jquery and monerdizr at the top, the rest at the foot -->
+    Script.Require("jQuery");
+    Script.Include("modernizr.custom.87724.js");
+
+    <!-- styles -->
+    Style.Include("bootstrap.css");
+    Style.Include("style.css");
+    Style.Include("header-1.css");
+    Style.Include("lemmon-slider.css");
+    
+    <!-- for Crisp -->
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png" />
+    
+    <!-- all js except jquery and modernizr goes at the foot -->
+    using (Script.Foot())
+    {
+        Script.Include("bootstrap.js");
+        Script.Include("ddsmoothmenu-min.js"); // desktop edge detect menu
+        Script.Include("jquery.dcjqaccordion.2.7.min.js"); // mobile multi-level accordion menu
+        Script.Include("jquery.easytabs.min.js");  // tabs / testimoniala
+        Script.Include("slide-to-top-accordion-min.js"); // slide to top accordion toggle
+        Script.Include("jquery.easing-1.3.min.js"); // easing
+        Script.Include("jquery.flexslider-min.js"); // flexslider content slider twitter slider and initializations
+        Script.Include("responsive-tables.js"); // responsive tables
+        Script.Include("jquery.fitvid.js"); // responsive videos
+        Script.Include("lemmon-slider.js"); // lemmon slider
+        Script.Include("scripts.js"); // initialize all scripts
+    }
+
+    /* Some useful shortcuts or settings
+    ***************************************************************/
+
+    Func<dynamic, dynamic> Zone = x => Display(x); // Zone as an alias for Display to help make it obvious when we're displaying zones
+
+    /* Layout classification based on filled zones
+    ***************************************************************/
+
+    //Add classes to the wrapper div to toggle aside widget zones on and off
+    var asideClass = CalcuClassify(new[] { "AsideFirst", "AsideSecond" }, "aside-"); // for aside-1, aside-2 or aside-12 if any of the aside zones are filled
+    if (HasText(asideClass))
+    {
+        Model.Classes.Add(asideClass);
+    }
+
+    //Add classes to the wrapper div to toggle tripel widget zones on and off
+    var tripelClass = CalcuClassify(new[] { "TripelFirst", "TripelSecond", "TripelThird" }, "tripel-"); // for tripel-1, triple-2, etc. if any of the tripel zones are filled
+    if (HasText(tripelClass))
+    {
+        Model.Classes.Add(tripelClass);
+    }
+
+    //Add classes to the wrapper div to toggle quad widget zones on and off
+    var footerQuadClass = CalcuClassify(new[] { "FooterQuadFirst", "FooterQuadSecond", "FooterQuadThird", "FooterQuadFourth" }, "split-"); // for quad-1, quad-2, etc. if any of the quad zones are filled
+    if (HasText(footerQuadClass))
+    {
+        Model.Classes.Add(footerQuadClass);
+    }
+
+    /* Inserting some ad hoc shapes
+    ***************************************************************/
+
+    //WorkContext.Layout.Header.Add(New.Branding(), "1"); // Site name and link to the home page
+    WorkContext.Layout.Footer.Add(New.Copyright(), "5"); // Copyright message
+    WorkContext.Layout.Header.Add(New.User(), "0"); // Login and dashboard links
+    WorkContext.Layout.Header.Add(New.Search(), "3"); // Search box for header
+
+    /* Last bit of code to prep the layout wrapper
+    ***************************************************************/
+
+    Model.Id = "layout-wrapper";
+    var tag = Tag(Model, "div"); // using Tag so the layout div gets the classes, id and other attributes added to the Model
+    var mainDivClass = string.Empty; // creating a string variable to hold the class name to add if AsideFirst is not null
+}
+@tag.StartElement
+@if (Model.Header != null)
+{
+    <div id="layout-header" >
+        <section class="container preheader"> 
+    
+            <!--this is the login for the user-->
+            <nav class="user clearfix"> <a href="login.html"><i class="icon-user"></i> Login</a> </nav>
+            <!--close user nav-->
+    
+            <div class="search-wrapper">
+                @*<form class="search" method="post" action="someaction.php">
+                    <div id="search-trigger">Search:</div>
+                    <input id="search-box" type="text" placeholder="search + enter">
+                </form>*@
+                
+            </div>
+            <div class="phone"><a href="tel:8135551234" class="tele">813.555.1234</a></div>
+            <ul class="social">
+                <li><a class="socicon small rss" href="#" data-placement="bottom" title="Subscribe to our RSS feed"></a></li>
+                <li><a class="socicon small facebook" href="#" data-placement="bottom" title="Follow us on Facebook"></a></li>
+                <li><a class="socicon small twitterbird" href="#" data-placement="bottom" title="Follow us on Twitter"></a></li>
+                <li><a class="socicon small linkedin" href="#" data-placement="bottom" title="Follow us on LinkedIn"></a></li>
+                <li><a class="socicon small dribbble" href="#" data-placement="bottom" title="Follow us on dribble"></a></li>
+                <li><a class="socicon small vimeo" href="#" data-placement="bottom" title="Follow us on Vimeo"></a></li>
+            </ul>
+        </section>
+        <div id="header" class="navbar-inner">
+            <div class="container">
+                <!-- change all container to container-fluid and row to row-fluid for fluid layout -->
+                @Zone(Model.Header)
+                @if (Model.Navigation != null)
+                {
+                    <div id="main_menu" class="ddsmoothmenu">
+                        @Zone(Model.Navigation)
+                    </div>
+                }
+            </div>
+           
+        </div>
+     <!-- BeforeMain Main hero unit for a primary marketing message or call to action -->
+    @if (Model.BeforeMain != null)
+    {
+        <div id="layout-before-main">
+            @Zone(Model.BeforeMain)
+        </div>
+    }   
+    
+</div>
+}
+
+<div id="layout-main" class="container">
+    <div class="row">
+        <!-- Create a span of 3 and 9 if there is content in the AsideFirst zone or AsideSecond zone, or 3-6-3 if both, otherwise create a span of 12 -->
+        @if (Model.AsideFirst != null && Model.AsideSecond != null)
+        {
+            mainDivClass = "span6";
+        }
+        else if (Model.AsideFirst != null || Model.AsideSecond != null)
+        {
+            mainDivClass = "span9";
+        }
+        else
+        {
+            mainDivClass = "span12";
+        }
+        @if (Model.AsideFirst != null)
+        {
+            <div class="span3">
+                <div id="aside-first" class="well sidebar-nav">
+                    @Zone(Model.AsideFirst)
+                </div>
+                <!--/.well -->
+            </div>
+            <!--/.span -->
+        }
+        <!-- Place messages above Content -->
+        @if (Model.Messages != null)
+        {
+            <div id="messages" class="@mainDivClass">
+                @Zone(Model.Messages)
+            </div>
+            <!--/.span -->
+        }
+        @if (Model.BeforeContent != null)
+        {
+            <div id="before-content" class="@mainDivClass">
+                @Zone(Model.BeforeContent)
+            </div>
+            <!--/.span -->
+        }
+        @if (Model.Content != null)
+        {
+            <div id="content" class="@mainDivClass">
+                @Zone(Model.Content)
+            </div>
+            <!--/.span -->
+        }
+        @if (Model.AfterContent != null)
+        {
+            <div id="after-content" class="@mainDivClass">
+                @Zone(Model.AfterContent)
+            </div>
+            <!--/.span -->
+        }
+        @if (Model.AsideSecond != null)
+        {
+            <div class="span3">
+                <div id="aside-second" class="well sidebar-nav">
+                    @Zone(Model.AsideSecond)
+                </div>
+                <!--/.well -->
+            </div>
+            <!--/.span -->
+        }
+    </div>
+    <!--/.row -->
+    @if (Model.AfterMain != null)
+    {
+        <div id="layout-after-main">
+            @Zone(Model.AfterMain)
+        </div>
+    }
+    @if (Model.TripelFirst != null || Model.TripelSecond != null || Model.TripelThird != null)
+    {
+        <div id="layout-tripel" class="row">
+            @if (Model.TripelFirst != null)
+            {
+                <div id="tripel-first" class="span4">
+                    @Zone(Model.TripelFirst)
+                </div>
+                <!--/.span -->
+            }
+            @if (Model.TripelSecond != null)
+            {
+                <div id="tripel-second" class="span4">
+                    @Zone(Model.TripelSecond)
+                </div>
+                <!--/.span -->
+            }
+            @if (Model.TripelThird != null)
+            {
+                <div id="tripel-third" class="span4">
+                    @Zone(Model.TripelThird)
+                </div>
+                <!--/.span -->
+            }
+        </div>
+        <!--/.row -->
+    }
+    <hr />
+    <footer id="footer">
+        @if (Model.Footer != null)
+        {
+            <div id="footer-sig">
+                @Zone(Model.Footer)
+            </div>
+        }
+    </footer>
+</div>
+<!--/.container -->
+@tag.EndElement

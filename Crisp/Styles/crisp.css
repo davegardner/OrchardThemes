@@ -1,0 +1,11 @@
+﻿article.widget-wozapening p { display: inline;}
+article.widget-wozapening li { list-style-type: square;}
+.btn { text-decoration: none;}
+article.content-item.news h4 a { text-decoration: none;}
+article.content-item.news { margin-bottom: 20px;}
+div.published.byline { font-size: 70%;}
+.widget-artists-represented h1 { font-size: 150%;}
+#footer h1 { font-size: 120%;margin-top: 10px;}
+.zone-footer p { font-size: 80%;}
+.more a {border-radius:4px 0 0 4px}
+/*.well { margin-bottom: 0px;}*/

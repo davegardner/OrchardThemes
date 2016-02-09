@@ -1,0 +1,27 @@
+@{
+    Style.Include("lemmon-slider.css");
+}
+
+
+<div class="lemmon-wrap clearfix">
+    <div id="slider1" class="lemmon-slider">
+        <a href="~/artist/tree-show">
+            <!-- Lemmon slider items -->
+            @*@DisplayChildren(Model)*@
+            <ul>
+                @foreach (var item in Model.Items[0].Content.Items[0].Items)
+                {
+                    string path = item.Items[0].Item.ToString();
+                    var url = Url.Content(path);
+                    <li><img src="@url?height=350&format=jpg" height="350" /></li>
+                    @*@Display(item);*@
+                }
+            </ul>
+            <!-- Lemmon slider items -->
+        </a>
+    </div>
+    <div class="controls">
+        <a class="prev-page" href="#">&lsaquo;</a>
+        <a class="next-page" href="#">&rsaquo;</a>
+    </div>
+</div>

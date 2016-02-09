@@ -1,0 +1,33 @@
+﻿@using System.Web.Mvc.Html
+@using Orchard.Mvc.Html;
+@using System.Web.Mvc;
+@using Orchard.Media.Helpers;
+
+@{
+    Style.Require("Cascade.ArtStock.Lightbox");
+    Script.Require("Cascade.ArtStock.Lightbox");
+    Style.Require("Cascade.Gallery");
+    Script.Require("AddToShoppingCart");
+
+    string url = Url.Content(Model.ContentItem.ArtworkPart.ProductShot.Url);
+    string title = Model.ContentItem.ArtworkPart.Title;
+    string artist = Model.ContentItem.ArtworkPart.ArtistRecord.Name;
+    string medium = Model.ContentItem.ArtworkPart.MediumRecord.Name;
+    string year = Model.ContentItem.ArtworkPart.Year.ToString();
+    string price = Model.ContentItem.ProductPart.UnitPrice.ToString("c");
+    int productId = Model.ContentItem.ProductPart.Id;
+    int inStock = Model.ContentItem.ProductPart.InStock;
+    string description = Model.ContentItem.ArtworkPart.Body.Text;
+}
+@using (Script.Foot())
+{
+    <script type="text/javascript">
+        $(function () {
+            $('#cascade-gallery a').lightBox({ imagePath: '@Url.Content("~/Modules/Cascade.ArtStock/images/")' });
+        });
+    </script>
+}
+
+    @Html.LightboxImage(url, title:title, artist: artist, medium: medium, year: year, price: price, productId: productId, inStock: inStock, description: description)
+    
+
