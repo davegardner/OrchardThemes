@@ -22,7 +22,9 @@
 
     var award = bookPart.Winner.Value ? "Winner" :
         bookPart.Honours.Value ? "Honours" :
-        bookPart.Shortlisted.Value ? "Shortlisted" : "";
+        bookPart.Shortlisted.Value ? "Shortlisted" :
+        bookPart.Notable.Value ? "Notable" :
+        "entrant";
         
     var byLine = "";
     if (String.IsNullOrWhiteSpace(author) || String.IsNullOrWhiteSpace(illustrator))

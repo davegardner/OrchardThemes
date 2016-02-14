@@ -434,6 +434,17 @@
     <Content Include="cbca_national\Views\Content-BlogPost.Detail.cshtml" />
     <Content Include="cbca_national\Views\DiaryDatesSummary.cshtml" />
     <Content Include="cbca_national\Views\Content-DiaryDates.Summary.cshtml" />
+    <Content Include="cbca_national\Views\LogOn.cshtml" />
+    <Content Include="cbca_national\Views\Orchard.Users\Account\AccessDenied.cshtml" />
+    <Content Include="cbca_national\Views\Orchard.Users\Account\ChallengeEmailFail.cshtml" />
+    <Content Include="cbca_national\Views\Orchard.Users\Account\ChallengeEmailSent.cshtml" />
+    <Content Include="cbca_national\Views\Orchard.Users\Account\ChallengeEmailSuccess.cshtml" />
+    <Content Include="cbca_national\Views\Orchard.Users\Account\ChangePassword.cshtml" />
+    <Content Include="cbca_national\Views\Orchard.Users\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="cbca_national\Views\Orchard.Users\Account\LostPassword.cshtml" />
+    <Content Include="cbca_national\Views\Orchard.Users\Account\RegistrationPending.cshtml" />
+    <Content Include="cbca_national\Views\Orchard.Users\Account\RequestLostPassword.cshtml" />
+    <Content Include="cbca_national\Views\Message.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
