@@ -1,7 +1,11 @@
 ﻿@using Orchard.Mvc.Html
 @using Orchard.ContentManagement
 @using Orchard.Utility.Extensions
+@using Orchard.Taxonomies.Fields
+@using Cascade.Bootstrap.Services
+
 @{
+
     if (Model.Title != null)
     {
         Layout.Title = Model.Title;
@@ -15,50 +19,30 @@
     var tag = Tag(Model, "article");
 
     var bookPart = Model.ContentItem.BookPart;
-    var author = (bookPart.AuthorFirstName.Value + " " + bookPart.AuthorLastName.Value).Trim();
-    var illustrator = (bookPart.IllustratorFirstName.Value + " " + bookPart.IllustratorLastName.Value).Trim();
-    var awardsYear = bookPart.AwardsYear.Value;
-    var category = bookPart.Category.Value;
+    var bookAwardPart = Model.ContentItem.BookAwardPart;
+    var bookReviewPart = Model.ContentItem.BookReviewPart;
+    var awardsYear = Convert.ToString(bookAwardPart.AwardsYear.Value);
+    var category = bookAwardPart.Category.Value;
 
-    var award = bookPart.Winner.Value ? "Winner" :
-        bookPart.Honours.Value ? "Honours" :
-        bookPart.Shortlisted.Value ? "Shortlisted" :
-        bookPart.Notable.Value ? "Notable" :
-        "entrant";
-        
-    var byLine = "";
-    if (String.IsNullOrWhiteSpace(author) || String.IsNullOrWhiteSpace(illustrator))
+    var award = "entrant";
+    if (bookAwardPart != null)
     {
-        // only one
-        if (String.IsNullOrWhiteSpace(author))
-        {
-            byLine = illustrator;
-        }
-        else
-        {
-            byLine = author;
-        }
-    }
-    else // both
-    {
-        if (bookPart.Category.Value == "Picture Book")
-        {
-            byLine = illustrator + " (text: " + author + ")";
-        }
-        else
-        {
-            byLine = author + " (illust: " + illustrator + ")";
-        }
+        award = bookAwardPart.Winner != null && bookAwardPart.Winner.Value ? "Winner" :
+            bookAwardPart.Honours != null && bookAwardPart.Honours.Value ? "Honours" :
+            bookAwardPart.Shortlisted != null && bookAwardPart.Shortlisted.Value ? "Shortlisted" :
+            bookAwardPart.Notable != null && bookAwardPart.Notable.Value ? "Notable" :
+            "entrant";
     }
 
-    string publisher = "";
-    var terms = bookPart.Publisher.Terms;
-    if (terms != null && terms.Count > 0)
-    {
-        publisher = terms[0].Name;
-    }
+    // NB: CBCABookExtensions is in the Cascade.Bootstrap theme
+    var credits = CBCABookExtensions.GetCredits(Model.ContentItem);
 
+    // Can be > 1 Publisher so get comma-separated list
+    var terms = (IEnumerable<Orchard.Taxonomies.Models.TermPart>)bookPart.Publisher.Terms;
+    var publishers = new HtmlString(string.Join(", ", terms.Select(t => t.Name.ToString()).ToArray()));
 }
+
+@*---------------------------------------------------------------------------*@
 
 <div class="container">
     <div class="row">
@@ -74,10 +58,10 @@
                     </td>
                     <td class="detail">
                         <div class="byLine">
-                            @byLine
+                            @credits
                         </div>
                         <div class="publisher">
-                            @publisher
+                            @publishers
                         </div>
                         <div class="isbn">
                             ISBN: @bookPart.ISBN.Value
@@ -86,10 +70,10 @@
                             @award @awardsYear @category
                         </div>
 
-                        @if (bookPart.Summary != null)
+                        @if (bookReviewPart.Summary != null)
                         {
                             <div class="summary">
-                                @bookPart.Summary.Value
+                                @bookReviewPart.Summary.Value
                             </div>
                         }
                     </td>
