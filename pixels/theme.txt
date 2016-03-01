@@ -1,0 +1,6 @@
+Name: pixels
+Author: Cascade Pixels
+Website: http://cascadepixels.com.au
+Description: Extends Cascade.Bootstrap theme
+Version: 1.0
+BaseTheme: Cascade.Bootstrap
