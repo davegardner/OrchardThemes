@@ -69,10 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cascade.Admin\Cascade.Admin.csproj" />
-    <Content Include="Cascade.Admin\Content\Web.config" />
     <Content Include="Cascade.Admin\Placement.info" />
-    <Content Include="Cascade.Admin\Scripts\Web.config" />
-    <Content Include="Cascade.Admin\Styles\Web.config" />
     <Content Include="Cascade.Admin\Theme.png" />
     <Content Include="Cascade.Admin\Theme.txt" />
     <Content Include="Cascade.Admin\Views\Dashboard\Admin\Index.cshtml" />
@@ -197,6 +194,8 @@
     <Content Include="Encompass\Theme.txt" />
     <Content Include="hiphouse\Theme.png" />
     <Content Include="hiphouse\Theme.txt" />
+    <Content Include="pixels\theme.png" />
+    <Content Include="pixels\theme.txt" />
     <Content Include="Safetec\Content\facicon.ico" />
     <Content Include="Safetec\Content\favicon.ico" />
     <Content Include="Safetec\Content\logo.png" />
@@ -210,7 +209,6 @@
     </Content>
     <Content Include="cbca_national\Views\Branding.cshtml" />
     <Content Include="cbca_national\Views\Shortlist.cshtml" />
-    <Content Include="cbca_national\Views\Winners.cshtml" />
     <Content Include="cbca_national\web.config" />
     <Content Include="cbca_national\Views\Resources.cshtml" />
     <Content Include="cbca_national\Scripts\Web.config" />
@@ -346,16 +344,14 @@
     <Content Include="hiphouse\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="pixels\Content\" />
+    <Folder Include="pixels\Scripts\" />
+    <Folder Include="pixels\Styles\" />
+    <Folder Include="pixels\Views\" />
     <Folder Include="Safetec\Styles\" />
     <Folder Include="Safetec\Views\Cascade.Webshop\Views\Parts\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cascade.Admin\Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Cascade.Admin\Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
     <Content Include="Clayton\Content\Web.config" />
     <Content Include="Clayton\Placement.info" />
     <Content Include="Clayton\Scripts\Web.config" />
@@ -386,9 +382,7 @@
     <Content Include="Safetec\Views\NavSearch.cshtml" />
     <Content Include="Safetec\Views\MiniCart.cshtml" />
     <Content Include="cbca_national\Views\Content-Book.Detail.cshtml" />
-    <Content Include="Safetec\Views\Parts\Cascade.Webshop.ShoppingCartWidget.cshtml" />
     <Content Include="cbca_national\Views\SearchButtonSnippet.cshtml" />
-    <Content Include="cbca_national\Views\Layout-temp.cshtml" />
     <Content Include="cbca_national\Views\CBCAHeaderSnippet.cshtml" />
     <Content Include="cbca_national\Views\MenuItemLinkdd.cshtml" />
     <Content Include="Crisp\Content\Web.config" />
@@ -437,8 +431,6 @@
     <Content Include="Crisp\Views\Zone-Footer-crap.cshtml" />
     <Content Include="Crisp\Web.config" />
     <Content Include="cbca_national\Views\Content-BlogPost.Detail.cshtml" />
-    <Content Include="cbca_national\Views\DiaryDatesSummary-NotUsed.cshtml" />
-    <Content Include="cbca_national\Views\Content-DiaryDates.Summary-NotUsed.cshtml" />
     <Content Include="cbca_national\Views\LogOn.cshtml" />
     <Content Include="cbca_national\Views\Orchard.Users\Account\AccessDenied.cshtml" />
     <Content Include="cbca_national\Views\Orchard.Users\Account\ChallengeEmailFail.cshtml" />
@@ -450,7 +442,9 @@
     <Content Include="cbca_national\Views\Orchard.Users\Account\RegistrationPending.cshtml" />
     <Content Include="cbca_national\Views\Orchard.Users\Account\RequestLostPassword.cshtml" />
     <Content Include="cbca_national\Views\Message.cshtml" />
-    <None Include="cbca_national\Views\Content-BookReview.Detail-NotUsed.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pixels\web.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

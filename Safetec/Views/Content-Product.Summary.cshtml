@@ -34,21 +34,23 @@
     }
     var body = new HtmlString(bodyHtml);
 }
-<div class="row">
-    <div class="col-sm-12">
-        <h2>@Html.ItemDisplayLink(titlePart.Title, (ContentItem)contentItem)</h2>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-2">
-        <img src="@image.FirstMediaUrl" alt="" width="100%" />
-    </div>
-    <div class="col-sm-10">
-        <div>
-            <div>@body</div>
-            <p>@Html.ItemDisplayLink(T("Read more...").ToString(), (ContentItem)contentItem)</p>
-        </div>
 
-        <p>Price: @productPart.UnitPrice.ToString("c")</p>
-    </div>
-</div>
+@* ------------------------------------------------------------------- *@
+
+<table>
+    <caption>@Html.ItemDisplayLink(titlePart.Title, (ContentItem)contentItem)</caption>
+    <tr>
+        <td>
+            <a href="@Url.ItemDisplayUrl((ContentItem)contentItem)">
+                <img src="@image.FirstMediaUrl" alt="" />
+            </a>
+        </td>
+        <td>
+            <p>@Html.ItemDisplayLink(productPart.Sku, (ContentItem)contentItem)</p>
+            <div>@body</div>
+            <p>@Html.ItemDisplayLink(T("Details...").ToString(), (ContentItem)contentItem)</p>
+
+            <p>Price: @productPart.UnitPrice.ToString("c")</p>
+        </td>
+    </tr>
+</table>

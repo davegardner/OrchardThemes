@@ -1,10 +1,12 @@
 <Placement>
-  <Match ContentType="Service">
-    <Match DisplayType="Summary">
-      <Place Parts_ProductPart="-"/>
-    </Match>
+  <Match ContentType="ProductCategoryTerm">
+      <Place Parts_Common_Metadata="-"/>
   </Match>
-<Match>
-        <Place Parts_Product_AddButton="-"/>
-</Match>
+  <Match ContentType="ServiceCategoryTerm">
+    <Place Parts_Common_Metadata="-"/>
+  </Match>
+  <Match>
+    <Place Parts_Product_AddButton="-"/>
+  </Match>
+
 </Placement>
