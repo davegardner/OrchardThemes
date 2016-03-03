@@ -194,6 +194,12 @@
     <Content Include="Encompass\Theme.txt" />
     <Content Include="Hiphouse\Content\favicon.ico" />
     <Content Include="Hiphouse\Scripts\FadeOut.js" />
+    <Content Include="Hiphouse\Styles\custom.css">
+      <DependentUpon>custom.less</DependentUpon>
+    </Content>
+    <Content Include="Hiphouse\Styles\custom.min.css">
+      <DependentUpon>custom.css</DependentUpon>
+    </Content>
     <Content Include="Hiphouse\Theme.png" />
     <Content Include="Hiphouse\Theme.txt" />
     <Content Include="pixels\theme.png" />
@@ -357,10 +363,13 @@
     <Content Include="Clayton\Views\PhotoSwipe__Phone.cshtml" />
     <Content Include="Clayton\Web.config" />
     <Content Include="Hiphouse\Content\Web.config" />
-    <Content Include="Hiphouse\Placement.info" />
     <Content Include="Hiphouse\Styles\Web.config" />
     <Content Include="Hiphouse\Views\Resources.cshtml" />
     <Content Include="Hiphouse\Web.config" />
+    <Content Include="Hiphouse\Views\Layout.cshtml" />
+    <Content Include="Hiphouse\Placement.info" />
+    <Content Include="Hiphouse\Scripts\Web.config" />
+    <Content Include="Hiphouse\Styles\custom.less" />
     <None Include="Safetec\Placement.info" />
     <Content Include="Safetec\Views\BadgeOfHonor.cshtml" />
     <Content Include="Safetec\Views\Branding.cshtml" />
