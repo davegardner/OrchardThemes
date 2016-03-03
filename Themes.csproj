@@ -192,8 +192,10 @@
     <Content Include="Crisp\ThemeZonePreview.png" />
     <Content Include="Encompass\Theme.png" />
     <Content Include="Encompass\Theme.txt" />
-    <Content Include="hiphouse\Theme.png" />
-    <Content Include="hiphouse\Theme.txt" />
+    <Content Include="Hiphouse\Content\favicon.ico" />
+    <Content Include="Hiphouse\Scripts\FadeOut.js" />
+    <Content Include="Hiphouse\Theme.png" />
+    <Content Include="Hiphouse\Theme.txt" />
     <Content Include="pixels\theme.png" />
     <Content Include="pixels\theme.txt" />
     <Content Include="Safetec\Content\facicon.ico" />
@@ -333,17 +335,6 @@
     <Content Include="Encompass\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="hiphouse\Content\Web.config" />
-    <Content Include="hiphouse\Placement.info" />
-    <Content Include="hiphouse\Scripts\Web.config" />
-    <Content Include="hiphouse\Styles\Web.config" />
-    <Content Include="hiphouse\Views\Body.Editor-Textarea.cshtml" />
-    <Content Include="hiphouse\Views\Branding.cshtml" />
-    <Content Include="hiphouse\Views\Content-Page-to-be-deleteed.cshtml" />
-    <Content Include="hiphouse\Views\IsotopePhotoSwipeHiphouse.cshtml" />
-    <Content Include="hiphouse\Web.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="pixels\Content\" />
     <Folder Include="pixels\Scripts\" />
     <Folder Include="pixels\Styles\" />
@@ -365,7 +356,12 @@
     <Content Include="Clayton\Views\PhotoSwipeItem.cshtml" />
     <Content Include="Clayton\Views\PhotoSwipe__Phone.cshtml" />
     <Content Include="Clayton\Web.config" />
-    <Content Include="Safetec\Placement.info" />
+    <Content Include="Hiphouse\Content\Web.config" />
+    <Content Include="Hiphouse\Placement.info" />
+    <Content Include="Hiphouse\Styles\Web.config" />
+    <Content Include="Hiphouse\Views\Resources.cshtml" />
+    <Content Include="Hiphouse\Web.config" />
+    <None Include="Safetec\Placement.info" />
     <Content Include="Safetec\Views\BadgeOfHonor.cshtml" />
     <Content Include="Safetec\Views\Branding.cshtml" />
     <Content Include="Safetec\Views\Content-Service.Detail.cshtml" />
