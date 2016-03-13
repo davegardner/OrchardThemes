@@ -13,6 +13,7 @@
 }
 
 @{
+    DateTime startTime = DateTime.Now;
     var cm = WorkContext.Resolve<IContentManager>();
 }
 
@@ -23,4 +24,5 @@
                 @Display(cm.BuildDisplay(contentItem, "Summary"))
             </div>
         }
+    <div class="duration">@((DateTime.Now - startTime).TotalSeconds)</div>
 </div>
