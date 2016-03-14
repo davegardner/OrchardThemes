@@ -1,6 +1,7 @@
 ﻿@using Orchard.Mvc.Html
 @using Orchard.ContentManagement
 @using Orchard.Utility.Extensions
+@using Orchard.Fields.Fields
 @using Orchard.Taxonomies.Fields
 @using Cascade.Bootstrap.Services
 
@@ -40,45 +41,49 @@
     // Can be > 1 Publisher so get comma-separated list
     var terms = (IEnumerable<Orchard.Taxonomies.Models.TermPart>)bookPart.Publisher.Terms;
     var publishers = new HtmlString(string.Join(", ", terms.Select(t => t.Name.ToString()).ToArray()));
+
 }
 
 @*---------------------------------------------------------------------------*@
 
-<div class="container">
+<div class="container book-detail">
+
     <div class="row">
-        <div class='book-detail col-lg-12'>
+        <div class='col-sm-12'>
             <h1>
                 @Model.ContentItem.TitlePart.Title
             </h1>
+        </div>
+    </div>
 
-            <table>
-                <tr>
-                    <td class="image">
-                        <img src="@bookPart.CoverImage.FirstMediaUrl" />
-                    </td>
-                    <td class="detail">
-                        <div class="byLine">
-                            @credits
-                        </div>
-                        <div class="publisher">
-                            @publishers
-                        </div>
-                        <div class="isbn">
-                            ISBN: @bookPart.ISBN.Value
-                        </div>
-                        <div class="gongs @award">
-                            @award @awardsYear @category
-                        </div>
+    <div class="row">
+        <div class="col-sm-3 image">
+            <img src="@bookPart.CoverImage.FirstMediaUrl" />
+        </div>
+        <div class="col-sm-9 detail">
+            <div class="byLine">
+                @credits
+            </div>
+            <div class="publisher">
+                @publishers
+            </div>
+            <div class="isbn">
+                ISBN: @bookPart.ISBN.Value
+            </div>
+            <div class="gongs @award">
+                @category @awardsYear @award
+            </div>
 
-                        @if (bookReviewPart.Summary != null)
-                        {
-                            <div class="summary">
-                                @bookReviewPart.Summary.Value
-                            </div>
-                        }
-                    </td>
-                </tr>
-            </table>
+            @Display.Link(bookPart.PublisherLink)
+            @Display.Link(bookPart.AuthorLink)
+            @Display.Link(bookPart.OtherLink)
+
+            @if (bookReviewPart.Summary != null)
+            {
+                <div class="summary">
+                    @bookReviewPart.Summary.Value
+                </div>
+            }
         </div>
     </div>
 </div>

@@ -370,6 +370,7 @@
     <Content Include="Hiphouse\Placement.info" />
     <Content Include="Hiphouse\Scripts\Web.config" />
     <Content Include="Hiphouse\Styles\custom.less" />
+    <Content Include="cbca_national\Views\Link.cshtml" />
     <None Include="Safetec\Placement.info" />
     <Content Include="Safetec\Views\BadgeOfHonor.cshtml" />
     <Content Include="Safetec\Views\Branding.cshtml" />
