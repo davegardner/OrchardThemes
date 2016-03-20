@@ -1,0 +1,28 @@
+@using Orchard.ContentManagement
+@using (Script.Foot())
+{
+    <script type="text/javascript">
+        // NOTES:
+        //  1. jQuery must be enabled for this to work
+        //  2. You must add id='putThisInAContainer' to some element in this template
+        var startElement = $("#putThisInAContainer");
+        if (startElement.parents(".container").length == 0) {
+            startElement.closest(".zone").addClass("container");
+        }
+    </script>
+}
+
+@{
+    var cm = WorkContext.Resolve<IContentManager>();
+}
+
+<div id="putThisInAContainer" class="row diary-dates-summary">
+    <table class="table table-condensed">
+        @foreach (var contentItem in Model.ContentItems)
+        {
+            <div class="col-sm-12">
+                @Display(cm.BuildDisplay(contentItem, "Summary"))
+            </div>
+        }
+    </table>
+</div>

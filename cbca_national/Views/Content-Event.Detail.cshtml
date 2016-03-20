@@ -1,0 +1,32 @@
+﻿@using Orchard.Tags.ViewModels;
+
+@{
+    Layout.Title = Model.ContentItem.TitlePart.Title;
+
+    var eventItem = Model.ContentItem;
+
+    var from = eventItem.Event.From.DateTime.Date;
+    var to = eventItem.Event.To.DateTime.Date;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <article id="post-@eventItem.Id">
+                <h1>@eventItem.TitlePart.Title</h1>
+                <div class="metadata" style="margin-bottom: 10px;">
+                    <time class="clearfix" datetime="@from.ToString("yyyy-MM-dd")">@from.ToString("dddd, MMMM d, yyyy")</time>
+
+                    @if (Model.Tags.Items.Count > 0 && ((IEnumerable<ShowTagViewModel>)Model.Tags.Items[0].Tags).Any())
+                    {
+                        @Display(Model.Tags)
+                    }
+                </div>
+                @Display(Model.Summary)
+            </article>
+            @*Allow for comments*@
+            <hr />
+            @Display(Model.Footer)
+        </div>
+    </div>
+</div>

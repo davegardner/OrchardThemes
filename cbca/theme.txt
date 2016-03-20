@@ -1,0 +1,6 @@
+Name: CBCA
+Author: Cascade Pixels
+Website: http://cascadepixels.com.au
+Description: Custom theme for CBCA
+Version: 1.0
+BaseTheme: Cascade.Bootstrap

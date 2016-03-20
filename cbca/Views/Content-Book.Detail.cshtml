@@ -1,0 +1,89 @@
+﻿@using Orchard.Mvc.Html
+@using Orchard.ContentManagement
+@using Orchard.Utility.Extensions
+@using Orchard.Fields.Fields
+@using Orchard.Taxonomies.Fields
+@using Cascade.Bootstrap.Services
+
+@{
+
+    if (Model.Title != null)
+    {
+        Layout.Title = Model.Title;
+    }
+
+    Model.Classes.Add("content-item");
+
+    var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+    Model.Classes.Add(contentTypeClassName);
+
+    var tag = Tag(Model, "article");
+
+    var bookPart = Model.ContentItem.BookPart;
+    var bookAwardPart = Model.ContentItem.BookAwardPart;
+    var bookReviewPart = Model.ContentItem.BookReviewPart;
+    var awardsYear = Convert.ToString(bookAwardPart.AwardsYear.Value);
+    var category = bookAwardPart.Category.Value;
+
+    var award = "entrant";
+    if (bookAwardPart != null)
+    {
+        award = bookAwardPart.Winner != null && bookAwardPart.Winner.Value ? "Winner" :
+            bookAwardPart.Honours != null && bookAwardPart.Honours.Value ? "Honours" :
+            bookAwardPart.Shortlisted != null && bookAwardPart.Shortlisted.Value ? "Shortlisted" :
+            bookAwardPart.Notable != null && bookAwardPart.Notable.Value ? "Notable" :
+            "entrant";
+    }
+
+    // NB: CBCABookExtensions is in the Cascade.Bootstrap theme
+    var credits = CBCABookExtensions.GetCredits(Model.ContentItem);
+
+    // Can be > 1 Publisher so get comma-separated list
+    var terms = (IEnumerable<Orchard.Taxonomies.Models.TermPart>)bookPart.Publisher.Terms;
+    var publishers = new HtmlString(string.Join(", ", terms.Select(t => t.Name.ToString()).ToArray()));
+
+}
+
+@*---------------------------------------------------------------------------*@
+
+<div class="container book-detail">
+
+    <div class="row">
+        <div class='col-sm-12'>
+            <h1>
+                @Model.ContentItem.TitlePart.Title
+            </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 image">
+            <img src="@bookPart.CoverImage.FirstMediaUrl" />
+        </div>
+        <div class="col-sm-9 detail">
+            <div class="byLine">
+                @credits
+            </div>
+            <div class="publisher">
+                @publishers
+            </div>
+            <div class="isbn">
+                ISBN: @bookPart.ISBN.Value
+            </div>
+            <div class="gongs @award">
+                @category @awardsYear @award
+            </div>
+
+            @Display.Link(bookPart.PublisherLink)
+            @Display.Link(bookPart.AuthorLink)
+            @Display.Link(bookPart.OtherLink)
+
+            @if (bookReviewPart.Summary != null)
+            {
+                <div class="summary">
+                    @bookReviewPart.Summary.Value
+                </div>
+            }
+        </div>
+    </div>
+</div>

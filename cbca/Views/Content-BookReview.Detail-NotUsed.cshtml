@@ -1,0 +1,179 @@
+﻿@using Orchard.Mvc.Html
+@using Orchard.ContentManagement
+@using Orchard.Utility.Extensions
+@{
+    if (Model.Title != null)
+    {
+        Layout.Title = Model.Title;
+    }
+
+    Model.Classes.Add("content-item");
+
+    var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+    Model.Classes.Add(contentTypeClassName);
+
+    var tag = Tag(Model, "article");
+
+    var bookPart = Model.ContentItem.BookPart;
+
+
+    // Create a list of credits, keeping the original sequence
+    List<object> allCredits = new List<object>();
+    allCredits.Add(new 
+    {
+        name = (bookPart.Author1FirstName.Value + " " + bookPart.Author1LastName.Value).Trim(),
+        role = bookPart.Author1Role.Value,
+        seq = 1
+    });
+    allCredits.Add(new 
+    {
+        name = (bookPart.Author2FirstName.Value + " " + bookPart.Author2LastName.Value).Trim(),
+        role = bookPart.Author2Role.Value,
+        seq = 2
+    });
+    allCredits.Add(new 
+    {
+        name = (bookPart.Author3FirstName.Value + " " + bookPart.Author3LastName.Value).Trim(),
+        role = bookPart.Author3Role.Value,
+        seq = 3
+    });
+    allCredits.Add(new 
+    {
+        name = (bookPart.Author4FirstName.Value + " " + bookPart.Author4LastName.Value).Trim(),
+        role = bookPart.Author4Role.Value,
+        seq = 4
+    });
+
+    // Adjust sequence for Picture Books by placing illustrator first
+    if (bookPart.Category.Value.IndexOf("picture book", StringComparison.OrdinalIgnoreCase) >= 0)
+    {
+        allCredits.Where(c => c.role.StartsWith("illust", StringComparison.OrdinalIgnoreCase)).Select(c => c.seq = 0);
+    }
+
+    // Assemble non-empty credits into a string like "Jo Blow (illust: Fred Nurk, ed: Per Diem, photos: Murray Ware)"
+    string credits = String.Empty();
+    int index = 0;
+    foreach (var credit in allCredits.Where(c => !String.IsNullOrEmpty(c.name)).OrderBy(c => c.seq))
+    {
+        ++index;
+        if (index == 1)
+        {
+            // first credit
+            credits += credit.name;
+        }
+        else
+        {
+            // second credit
+            if (index == 2)
+            {
+                credits += " (" + credit.role + ": " + credit.name;
+            }
+            else
+            {
+                // third and fourth credits
+                credits += ", " + credit.role + ": " + credit.name;
+            }
+        }
+        credits += ")";
+    }
+
+
+    //var author = (bookPart.AuthorFirstName.Value + " " + bookPart.AuthorLastName.Value).Trim();
+    //var illustrator = (bookPart.IllustratorFirstName.Value + " " + bookPart.IllustratorLastName.Value).Trim();
+    var awardsYear = bookPart.AwardsYear.Value;
+    var category = bookPart.Category.Value;
+
+    var award = bookPart.Winner.Value ? "Winner" :
+        bookPart.Honours.Value ? "Honours" :
+        bookPart.Shortlisted.Value ? "Shortlisted" :
+        bookPart.Notable.Value ? "Notable" :
+        "entrant";
+
+    //var byLine = "";
+    //if (String.IsNullOrWhiteSpace(author) || String.IsNullOrWhiteSpace(illustrator))
+    //{
+    //    // only one
+    //    if (String.IsNullOrWhiteSpace(author))
+    //    {
+    //        byLine = illustrator;
+    //    }
+    //    else
+    //    {
+    //        byLine = author;
+    //    }
+    //}
+    //else // both
+    //{
+    //    if (bookPart.Category.Value == "Picture Book")
+    //    {
+    //        byLine = illustrator + " (text: " + author + ")";
+    //    }
+    //    else
+    //    {
+    //        byLine = author + " (illust: " + illustrator + ")";
+    //    }
+    //}
+
+    string publisher = "";
+    var terms = bookPart.Publisher.Terms;
+    if (terms != null && terms.Count > 0)
+    {
+        publisher = terms[0].Name;
+    }
+
+    // extract some data from the Review Part
+    var reviewPart = Model.ContentItem.BookReviewPart;
+    var summary = reviewPart.Summary.Value;
+    var review = new HtmlString(reviewPart.Review.Value);
+    var reviewer = reviewPart.Reviewer.Value;
+}
+
+<div class="container">
+    <div class="row">
+        <div class='book-detail col-lg-12'>
+            <h1>
+                @Model.ContentItem.TitlePart.Title
+            </h1>
+            @if (!String.IsNullOrEmpty(reviewer))
+            {
+                <p class="lead">
+                    By @reviewer
+                </p>
+            }
+            <table>
+                <tr>
+                    <td class="image">
+                        <img src="@bookPart.CoverImage.FirstMediaUrl" />
+                    </td>
+                    <td class="detail">
+                        <div class="byLine">
+                            @credits
+                        </div>
+                        <div class="publisher">
+                            @publisher
+                        </div>
+                        <div class="isbn">
+                            ISBN: @bookPart.ISBN.Value
+                        </div>
+                        <div class="gongs @award">
+                            @award @awardsYear @category
+                        </div>
+
+                        @if (!String.IsNullOrEmpty(summary))
+                        {
+                        <div class="summary">
+                            @summary
+                        </div>
+                        }
+                    </td>
+                </tr>
+            </table>
+
+            <div>
+                @review
+            </div>
+            <hr />
+            @Display(Model.Footer)
+        </div>
+    </div>
+</div>

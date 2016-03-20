@@ -1,0 +1,74 @@
+﻿@model Orchard.Search.ViewModels.SearchViewModel
+@{
+    Style.Require("Search");
+
+    IEnumerable<object> searchResults = Model.ContentItems;
+    Model.ContentItems.Classes.Add("content-items");
+    Model.ContentItems.Classes.Add("search-results");
+
+    //var cm = WorkContext.Resolve<IContentManager>();
+
+}
+@*@using (Script.Foot())
+    {
+        <script type="text/javascript">
+            // NOTES:
+            //  1. jQuery must be enabled for this to work
+            //  2. You must add id='putThisInAContainer' to some element in this template
+            var startElement = $("#putThisInAContainer");
+            if (startElement.parents(".container").length == 0) {
+                startElement.closest(".zone").addClass("container");
+            }
+        </script>
+    }*@
+
+<div class="cbca-search-list">
+    <h1>@Html.TitleForPage(T("Search").Text)</h1>
+
+    @if (HasText(Model.Query))
+    {
+        if (!searchResults.Any())
+        {
+            <p class="search-summary">@T.Plural("There is <em>one</em> result", "<em>zero</em> results", searchResults.Count())</p>
+        }
+        else
+        {
+            <p class="search-summary">@T.Plural("There is <em>one</em> result", "<em>{1} - {2}</em> of <em>{0}</em> results", Model.TotalItemCount, Model.StartPosition, Model.EndPosition)</p>
+        }
+    }
+    @if (searchResults != null && searchResults.Any())
+    {
+        @Display(searchResults)
+        @Display(Model.Pager)
+    }
+
+    @*@foreach (var contentItem in Model.ContentItems)
+        {
+            <div class="col-lg-4 col-sm-6">
+                @Display(cm.BuildDisplay(contentItem, "Summary"))
+            </div>
+        }*@
+</div>
+
+
+
+@*<div class="container">
+        <h1>@Html.TitleForPage(T("Search").Text)</h1>
+
+        @if (HasText(Model.Query))
+        {
+            if (!searchResults.Any())
+            {
+                <p class="search-summary">@T.Plural("There is <em>one</em> result", "<em>zero</em> results", searchResults.Count())</p>
+            }
+            else
+            {
+                <p class="search-summary">@T.Plural("There is <em>one</em> result", "<em>{1} - {2}</em> of <em>{0}</em> results", Model.TotalItemCount, Model.StartPosition, Model.EndPosition)</p>
+            }
+        }
+        @if (searchResults != null && searchResults.Any())
+        {
+            @Display(searchResults)
+            @Display(Model.Pager)
+        }
+    </div>*@

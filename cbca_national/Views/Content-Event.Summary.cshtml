@@ -1,0 +1,31 @@
+﻿@using Orchard.Utility.Extensions;
+@{
+    if (Model.Title != null) {
+        Layout.Title = Model.Title;
+    }
+
+    Model.Classes.Add("content-item");
+
+    var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+    Model.Classes.Add(contentTypeClassName);
+
+    var tag = Tag(Model, "article");
+
+    var eventItem = Model.ContentItem;
+    var from = eventItem.Event.From.DateTime.Date;
+    var to = eventItem.Event.To.DateTime.Date;
+}
+
+@tag.StartElement
+<div id="putThisInAContainer" class='event-summary '>
+    <div class="row">
+        <div class="col-xs-3">
+            <time class="clearfix" datetime="@from.ToString(" yyyy-mm-dd")">@from.ToString("dddd, MMMM d, yyyy")</time>
+            <time class="clearfix" datetime="@to.ToString(" yyyy-mm-dd")">@to.ToString("dddd, MMMM d, yyyy")</time>
+        </div>
+        <div class="col-xs-9">
+            @Model.ContentItem.TitlePart.Title
+        </div>
+    </div>
+</div>
+@tag.EndElement
