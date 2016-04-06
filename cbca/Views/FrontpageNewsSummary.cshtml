@@ -1,0 +1,11 @@
+﻿@using Orchard.Utility.Extensions;
+
+<div>
+    @foreach (var contentItem in Model.ContentItems)
+    {
+        <div>
+            @Html.Raw(contentItem.BodyPart.Text)
+        </div>
+    }
+</div>
+

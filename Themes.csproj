@@ -83,6 +83,11 @@
     <Content Include="cbca\Content\Images\books.png" />
     <Content Include="cbca\Content\Images\Bookweek icon.png" />
     <Content Include="cbca\Content\Images\Bottle.png" />
+    <Content Include="cbca\Content\Images\CBCA-BOOKWEEK-ICON.png" />
+    <Content Include="cbca\Content\Images\CBCA-DONATE-ICON.png" />
+    <Content Include="cbca\Content\Images\CBCA-INSTAGRAM.png" />
+    <Content Include="cbca\Content\Images\CBCA-MEMBERS-ICON.png" />
+    <Content Include="cbca\Content\Images\CBCA-PENSICON.png" />
     <Content Include="cbca\Content\Images\CBCA_full logo_blue_tagline_266x159.png" />
     <Content Include="cbca\Content\Images\CBCA_full logo_blue_tagline_532x318.png" />
     <Content Include="cbca\Content\Images\CBCA_full-logo_blue_tagline.png" />
@@ -91,8 +96,10 @@
     <Content Include="cbca\Content\Images\CROC IMAGE.png" />
     <Content Include="cbca\Content\Images\email.png" />
     <Content Include="cbca\Content\Images\facebook.png" />
+    <Content Include="cbca\Content\favicon.ico" />
     <Content Include="cbca\Content\Images\feather.png" />
     <Content Include="cbca\Content\Images\Footer image.png" />
+    <Content Include="cbca\Content\Images\Footer.png" />
     <Content Include="cbca\Content\Images\header_logo_blue.png" />
     <Content Include="cbca\Content\Images\Jar icon.png" />
     <Content Include="cbca\Content\Images\Kangaroo on slide.png" />
@@ -434,8 +441,10 @@
     <Content Include="cbca\Views\Resources.cshtml" />
     <Content Include="cbca\Views\SearchButtonSnippet.cshtml" />
     <Content Include="cbca\Views\Shortlist.cshtml" />
-    <Content Include="cbca\Views\Winners.cshtml" />
     <Content Include="cbca\web.config" />
+    <Content Include="cbca\Views\CBCAFooterSnippet.cshtml" />
+    <Content Include="cbca\Views\FrontpageNewsSummary.cshtml" />
+    <Content Include="cbca\Views\BookList.cshtml" />
     <None Include="Safetec\Placement.info" />
     <Content Include="Safetec\Views\BadgeOfHonor.cshtml" />
     <Content Include="Safetec\Views\Branding.cshtml" />

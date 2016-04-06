@@ -20,9 +20,10 @@
         @foreach (var contentItem in Model.ContentItems)
         {
             var shape = cm.BuildDisplay(contentItem, "Summary");
-            shape.Style = "Shortlist";
+            shape.Style = "Booklist";
             <div class="col-lg-4 col-sm-6" >
                 @Display(shape)
             </div>
         }
 </div>
+

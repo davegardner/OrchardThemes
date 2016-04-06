@@ -21,14 +21,11 @@
     var awardsYear = Convert.ToString(bookAwardPart.AwardsYear.Value);
     var category = bookAwardPart.Category.Value;
 
-    var award = "entrant";
+    var award = "";
     if (bookAwardPart != null)
     {
         award = bookAwardPart.Winner != null && bookAwardPart.Winner.Value ? "Winner" :
-            bookAwardPart.Honours != null && bookAwardPart.Honours.Value ? "Honours" :
-            bookAwardPart.Shortlisted != null && bookAwardPart.Shortlisted.Value ? "Shortlisted" :
-            bookAwardPart.Notable != null && bookAwardPart.Notable.Value ? "Notable" :
-            "entrant";
+            bookAwardPart.Honours != null && bookAwardPart.Honours.Value ? "Honours" : "";
     }
 
 
@@ -41,7 +38,7 @@
 
 }
 
-   @*---------------------------------------------------------------------------*@
+@*---------------------------------------------------------------------------*@
 
 <div class='book-summary'>
     <table class="table table-condensed">
@@ -50,9 +47,12 @@
                 <img src="@bookPart.CoverImage.FirstMediaUrl" />
             </td>
             <td class="detail">
-                <div class="gongs @award">
-                    @award
-                </div>
+                @if (Model.Style != "Shortlist" && !String.IsNullOrEmpty(award))
+                {
+                    <div class="gongs @award">
+                        @award
+                    </div>
+                }
                 <div class="title">
                     @Model.ContentItem.TitlePart.Title
                 </div>

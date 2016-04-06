@@ -9,35 +9,37 @@
     <div class="row">
         <div class="col-sm-12">
             <h1 class="page-title">@Html.TitleForPage((string)Model.Title)</h1>
-            <p>
-                @T("Please enter your username and password.")
-                @if (userCanRegister)
-                { @Html.ActionLink(T("Register").Text, "Register", new { ReturnUrl = Request.QueryString["ReturnUrl"] }) @T(" if you don't have an account.") }
-                @if (enableLostPassword)
-                { <text> </text> @Html.ActionLink(T("Lost your Password?").Text, "RequestLostPassword") }
-            </p>
-            @Html.ValidationSummary(T("Login was unsuccessful. Please correct the errors and try again.").ToString())
+            <div class="well">
+                <p>
+                    @T("Please enter your username and password.")
+                    @if (userCanRegister)
+                    { @Html.ActionLink(T("Register").Text, "Register", new { ReturnUrl = Request.QueryString["ReturnUrl"] }) @T(" if you don't have an account.") }
+                    @if (enableLostPassword)
+                    { <text> </text> @Html.ActionLink(T("Lost your Password?").Text, "RequestLostPassword") }
+                </p>
+                @Html.ValidationSummary(T("Login was unsuccessful. Please correct the errors and try again.").ToString())
 
-            @using (Html.BeginFormAntiForgeryPost(Url.Action("LogOn", new { ReturnUrl = Request.QueryString["ReturnUrl"] })))
-            {
-                <fieldset class="login-form group">
-                    <div class="cascade-air below v20">
-                        <legend>@T("Account Information")</legend>
-                        <label for="username-email">@T("Username")</label>
-                        @Html.TextBox("userNameOrEmail", "", new { id = "username-email", autofocus = "autofocus" })
-                        @Html.ValidationMessage("userNameOrEmail")
-                    </div>
-                    <div class="cascade-air below v20">
-                        <label for="password">@T("Password")</label>
-                        @Html.Password("password")
-                        @Html.ValidationMessage("password")
-                    </div>
-                    <div class="cascade-air below v20">
-                        @Html.CheckBox("rememberMe", new { id = "remember-me" })<label class="forcheckbox" for="remember-me">@T("Remember Me")</label>
-                    </div>
-                    <button class="primaryAction" type="submit">@T("Sign In")</button>
-                </fieldset>
-            }
+                @using (Html.BeginFormAntiForgeryPost(Url.Action("LogOn", new { ReturnUrl = Request.QueryString["ReturnUrl"] })))
+                {
+                    <fieldset class="login-form group">
+                        <div class="cascade-air below v20">
+                            <legend>@T("Account Information")</legend>
+                            <label for="username-email">@T("Username")</label>
+                            @Html.TextBox("userNameOrEmail", "", new { id = "username-email", autofocus = "autofocus" })
+                            @Html.ValidationMessage("userNameOrEmail")
+                        </div>
+                        <div class="cascade-air below v20">
+                            <label for="password">@T("Password")</label>
+                            @Html.Password("password")
+                            @Html.ValidationMessage("password")
+                        </div>
+                        <div class="cascade-air below v20">
+                            @Html.CheckBox("rememberMe", new { id = "remember-me" })<label class="forcheckbox" for="remember-me">@T("Remember Me")</label>
+                        </div>
+                        <button class="primaryAction" type="submit">@T("Sign In")</button>
+                    </fieldset>
+                }
+            </div>
         </div>
     </div>
 </div>
